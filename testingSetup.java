@@ -1,3 +1,10 @@
+// checkstyle:
+// Checks Java source code for adherence to a set of rules.
+// Copyright (C) 2024  Henry Becker
+// Last modification by $Author: Justin Feinman $ 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
 public class testingSetup{
     public static void main(String[] argas)
     {
