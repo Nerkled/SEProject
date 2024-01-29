@@ -24,14 +24,6 @@
   </module>
 
   <module name="TreeWalker">
-          <module name="Regexp">
-                <property
-                  name="format"
-                  value="\A/{71}\n// checkstyle:\n// Checks Java source code for
-                  adherence to a set of rules\.\n// Copyright \(C\) \d\d\d\d  Henry Becker\n
-                  // Last modification by \$Author.*\$\n/{71}\n\npackage [\w\.]*;\n\n
-                  (import [\w\.]*;\n)*\n/\*\*\n( \*[^/]*\n)* \*/"/>
-          </module>
     <module name="OuterTypeFilename"/>
     <module name="IllegalTokenText">
       <property name="tokens" value="STRING_LITERAL, CHAR_LITERAL"/>
