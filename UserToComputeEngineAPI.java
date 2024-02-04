@@ -1,4 +1,4 @@
-public interface userToComputeEngineAPI{
+public interface UserToComputeEngineAPI{
     //1: specify the input soruce
     void setInputSource(Source source);
     //2: specify the output Delimiter
