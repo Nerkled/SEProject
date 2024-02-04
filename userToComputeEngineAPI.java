@@ -13,18 +13,8 @@ public interface userToComputeEngineAPI{
     void executeLucasNumberComputation();
 
     public enum DelimiterResponse {
-        DEFAULT(true),
-        CUSTOM(false);
-        
-        private boolean isDefault;
-    
-        private void setDelimiterResponse(boolean isDefault) {
-            this.isDefault = isDefault;
-        }
-    
-        public boolean isDefault() {
-            return isDefault;
-        }
+        DEFAULT,
+        CUSTOM;
     }
     
 }
