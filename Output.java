@@ -1,3 +1,3 @@
-public class Output {
+public class Output{
     // Implementation not needed for now
 }
