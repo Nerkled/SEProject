@@ -8,7 +8,8 @@ public class UserToComputeEngineImp implements UserToComputeEngineAPI
     private StorageToComputeEngineAPI storageToComputeEngineAPI; 
     
 
-    public UserToComputeEngineImp(StorageToComputeEngineAPI storageToComputeEngineAPI) {
+    public UserToComputeEngineImp(StorageToComputeEngineAPI storageToComputeEngineAPI)
+    {
         this.storageToComputeEngineAPI = storageToComputeEngineAPI;
     }
     
