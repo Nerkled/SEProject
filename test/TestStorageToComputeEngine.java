@@ -1,14 +1,20 @@
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.mockito.Mockito;
-import static org.mockito.Mockito.when;
-import static org.mockito.Mockito.anyInt;
-
-public class TestStorageToComputeEngine{
+public class TestStorageToComputeEngine {
     @Test
-    public void test() throws Exception{
-        StorageToComputeEngine storageToComputeEngineMock = Mockito.mock(StorageToComputeEngine.class);
-        when(storageToComputeEngineMock.getsStorageEngine(anyInt())).thenReturn(3);
-        assertEquals(3, storageToComputeEngineMock.getsStorageEngine(3));
+    public void testStorageToComputeEngineAPI() {
+        StorageToComputeEngineAPI storageMock = Mockito.mock(StorageToComputeEngineAPI.class);
+        
+        Input input = new Input(); 
+        
+        Output output = new Output();
+        
+        storageMock.write(output);
+        
+        Mockito.verify(storageMock, Mockito.times(1)).write(Mockito.eq(output));
+        
+        storageMock.read(input);
+        
+        Mockito.verify(storageMock, Mockito.times(1)).read(Mockito.eq(input));
     }
 }
