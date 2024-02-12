@@ -1,0 +1,13 @@
+{
+    "java.project.sourcePaths": [
+        ".",
+        "test"
+    ],
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "c:\\Users\\robon\\Downloads\\mockitoJars\\byte-buddy-1.14.11.jar",
+        "c:\\Users\\robon\\Downloads\\mockitoJars\\byte-buddy-agent-1.14.11.jar",
+        "c:\\Users\\robon\\Downloads\\mockitoJars\\mockito-core-5.10.0.jar",
+        "c:\\Users\\robon\\Downloads\\mockitoJars\\objenesis-3.3.jar"
+    ]
+}
