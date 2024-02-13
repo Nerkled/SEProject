@@ -1,4 +1,4 @@
-import com.lucas.*;
+import com.lucas.Output;
 import java.util.List;
 
 public class OutputConfig extends Output {

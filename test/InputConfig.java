@@ -1,4 +1,4 @@
-import com.lucas.*;
+import com.lucas.Input;
 import java.util.List;
 
 public class InputConfig extends Input {
