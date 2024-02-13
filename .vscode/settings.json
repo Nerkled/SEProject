@@ -1,9 +1,23 @@
-{
+
+    "java.project.sourcePaths": [
+        ".",
+        "src",
+        "test"
+    ],
     "java.project.referencedLibraries": [
         "lib/**/*.jar",
+        "c:\\Users\\robon\\Downloads\\mockitoJars\\byte-buddy-1.14.11.jar",
+        "c:\\Users\\robon\\Downloads\\mockitoJars\\byte-buddy-agent-1.14.11.jar",
+        "c:\\Users\\robon\\Downloads\\mockitoJars\\mockito-core-5.10.0.jar",
+        "c:\\Users\\robon\\Downloads\\mockitoJars\\objenesis-3.3.jar",
+        "c:\\Users\\jpf99\\Downloads\\Bollege\\Year3\\SWE\\mockitoJars\\objenesis-3.3.jar",
+        "c:\\Users\\jpf99\\Downloads\\Bollege\\Year3\\SWE\\mockitoJars\\byte-buddy-1.14.11.jar",
+        "c:\\Users\\jpf99\\Downloads\\Bollege\\Year3\\SWE\\mockitoJars\\byte-buddy-agent-1.14.11.jar",
+        "c:\\Users\\jpf99\\Downloads\\Bollege\\Year3\\SWE\\mockitoJars\\mockito-core-5.10.0.jar"
         "c:\\Users\\nealb\\OneDrive\\Desktop\\mockito\\byte-buddy-1.14.11.jar",
         "c:\\Users\\nealb\\OneDrive\\Desktop\\mockito\\byte-buddy-agent-1.14.11.jar",
         "c:\\Users\\nealb\\OneDrive\\Desktop\\mockito\\mockito-core-5.10.0.jar",
         "c:\\Users\\nealb\\OneDrive\\Desktop\\mockito\\objenesis-3.3.jar"
-    ]
+    ],
+    "java.debug.settings.onBuildFailureProceed": true
 }
