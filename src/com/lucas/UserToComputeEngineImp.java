@@ -1,5 +1,4 @@
 package com.lucas;
-
 public class UserToComputeEngineImp implements UserToComputeEngineAPI {
 
     private Input input;
@@ -12,6 +11,7 @@ public class UserToComputeEngineImp implements UserToComputeEngineAPI {
     public UserToComputeEngineImp(StorageToComputeEngineAPI storageToComputeEngineAPI) {
         this.storageToComputeEngineAPI = storageToComputeEngineAPI;
     }
+
 
     public void setInputSource(Source source) {
         this.source = source;

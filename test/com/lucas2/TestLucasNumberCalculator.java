@@ -1,3 +1,4 @@
+package com.lucas2;
 import org.junit.Test;
 import org.mockito.Mockito;
 

@@ -1,3 +1,4 @@
+package com.lucas2;
 import com.lucas.Input;
 import java.util.List;
 
