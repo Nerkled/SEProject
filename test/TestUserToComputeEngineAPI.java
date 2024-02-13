@@ -39,10 +39,9 @@ public class TestUserToComputeEngineAPI{
         verify(storageMock, never()).write(any(Output.class));
         assertEquals(resultDelimiter, userAPI.getResultDelimiter());
 
-
         //testing SetInputSource  
         //Source source = null;  
-        Source source = new Source(); // Ensure source is initialized
+        Source source = new Source();
         userAPI.setInputSource(source);
         assertEquals(source, userAPI.getInputSource());
 
