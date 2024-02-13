@@ -1,7 +1,6 @@
 import com.lucas.StorageToComputeEngineAPI;
 import com.lucas.Input;
 import com.lucas.Output;
-
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 public class TestStorageToComputeEngine {
