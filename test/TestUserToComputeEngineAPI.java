@@ -23,11 +23,9 @@ import static org.mockito.Mockito.verify;
 
 
 
-public class TestUserToComputeEngineAPI
-{
+public class TestUserToComputeEngineAPI{
     @Test
-    public void testAPI()
-    {
+    public void testAPI(){
         StorageToComputeEngineAPI storageMock = Mockito.mock(StorageToComputeEngineAPI.class);
         UserToComputeEngineAPI userAPI = new UserToComputeEngineImp(storageMock);
         Source sourceMock = Mockito.mock(Source.class);
@@ -62,6 +60,6 @@ public class TestUserToComputeEngineAPI
 
         //lucas number computation test
         userAPI.executeLucasNumberComputation();
-
     }
+
 }
