@@ -28,6 +28,6 @@ public interface UserToComputeEngineAPI{
     }
 
 
-    Object getDestination();
+    
     
 }

@@ -38,12 +38,12 @@ public class UserToComputeEngineImp implements UserToComputeEngineAPI {
         return "";
     }
     public Source getInputSource(){
-        return null;
+        return this.source;
     }
     public Source getOutputDestination(){
-        return null;
+        return this.destination;
     }
     public Input getComputationInput(){
-        return null;
+        return this.input;
     }
 }

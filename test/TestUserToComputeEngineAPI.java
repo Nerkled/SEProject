@@ -3,7 +3,9 @@ import org.mockito.Mockito;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.never;
+import static org.mockito.Mockito.verify;
+
 
 
 public class TestUserToComputeEngineAPI
@@ -18,29 +20,30 @@ public class TestUserToComputeEngineAPI
         verify(storageMock, never()).write(any(Output.class));
 
         //testing SetOutputDelimiter
-        String resultDelimiter = ",";  
-        //String resultDelimiter="";
+        //String resultDelimiter = ",";  
+        String resultDelimiter="";
         userAPI.setOutputDelimiter(resultDelimiter);
         verify(storageMock, never()).write(any(Output.class));
-        assert resultDelimiter.equals(userAPI.getResultDelimiter());
+        assertEquals(resultDelimiter, userAPI.getResultDelimiter());
 
 
-        //testing SetInputSource
-        Source source = new Source();  
+        //testing SetInputSource  
         //Source source = null;  
+        Source source = new Source(); // Ensure source is initialized
         userAPI.setInputSource(source);
-        assert source.equals(userAPI.getInputSource());
+        assertEquals(source, userAPI.getInputSource());
 
         //testing SetOutputDestination
-        Source destination = new Source(); 
-        //Source destination = null; 
+        //Source destination = new Source(); 
+        Source destination = null; 
         userAPI.setOutputDestination(destination);
-        assert destination.equals(userAPI.getOutputDestination());
+        assertEquals(destination,userAPI.getOutputDestination());
 
         //testing setComputationInput
-        Input input= new Input( );
+        //Input input= new Input( );
+        Input input= null;
         userAPI.setComputationInput(input);
-        assert input.equals(userAPI.getComputationInput());
+        assertEquals (input, userAPI.getComputationInput());
 
         //lucas number computation test
         userAPI.executeLucasNumberComputation();
