@@ -1,9 +1,0 @@
-{
-    "java.project.referencedLibraries": [
-        "lib/**/*.jar",
-        "c:\\Users\\jpf99\\Downloads\\Bollege\\Year3\\SWE\\mockitoJars\\objenesis-3.3.jar",
-        "c:\\Users\\jpf99\\Downloads\\Bollege\\Year3\\SWE\\mockitoJars\\byte-buddy-1.14.11.jar",
-        "c:\\Users\\jpf99\\Downloads\\Bollege\\Year3\\SWE\\mockitoJars\\byte-buddy-agent-1.14.11.jar",
-        "c:\\Users\\jpf99\\Downloads\\Bollege\\Year3\\SWE\\mockitoJars\\mockito-core-5.10.0.jar"
-    ]
-}

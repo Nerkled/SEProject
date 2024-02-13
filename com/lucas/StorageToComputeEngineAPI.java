@@ -1,3 +1,4 @@
+package com.lucas;
 public interface StorageToComputeEngineAPI {
     void write(Output output);
     // writes to a user-specified output source

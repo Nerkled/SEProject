@@ -1,3 +1,5 @@
+package com.lucas;
+
 public interface UserToComputeEngineAPI{
     //1: specify the input soruce
     void setInputSource(Source source);
