@@ -1,3 +1,6 @@
+package com.lucas;
+
+
 public class LucasNumberCalculator implements LucasComputerAPI {
 
     private StorageToComputeEngineAPI storageToComputeEngineAPI;
@@ -13,6 +16,7 @@ public class LucasNumberCalculator implements LucasComputerAPI {
     public void read(Input input) {
         this.read(input); // Note: This will cause a StackOverflowError
     }
+
 
     // 3: Write Data
     public void write(Output output) {
@@ -38,5 +42,11 @@ public class LucasNumberCalculator implements LucasComputerAPI {
     // 7: Send back to StorageToComputeEngineAPI
     public void sendResult() {
         this.sendResult(); // Note: This will cause a StackOverflowError
+    }
+
+    @Override
+    public void getLucasComputerAPI() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getLucasComputerAPI'");
     }
 }

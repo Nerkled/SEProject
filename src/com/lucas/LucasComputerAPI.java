@@ -1,3 +1,4 @@
+package com.lucas;
 public interface LucasComputerAPI {
 
     //1: Initialize the API
@@ -14,4 +15,6 @@ public interface LucasComputerAPI {
     void enumResult();
     //6: Send back to StorageToComputeEngineAPI
     void sendResult();
+    //need a getter
+    void getLucasComputerAPI();
 } 
