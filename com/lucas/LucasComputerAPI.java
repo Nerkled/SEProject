@@ -1,3 +1,4 @@
+package com.lucas;
 public interface LucasComputerAPI {
 
     //1: Initialize the API
