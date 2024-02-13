@@ -1,25 +1,32 @@
-
 import org.junit.Test;
 import org.mockito.Mockito;
-import com.lucas.*;
 
-import static org.mockito.Mockito.*;
+// Lucas Methods
+import com.lucas.StorageToComputeEngineAPI;
+import com.lucas.LucasComputerAPI;
+import com.lucas.Input;
+import com.lucas.Output;
 
-
+// Import  Mockito methods 
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.doReturn;
+import static org.mockito.Mockito.doNothing;
+import static org.mockito.Mockito.any;
+import static org.mockito.Mockito.doAnswer;
 
 public class TestLucasNumberCalculator {
 
     @Test
     public void testCoordinatorSmoke() {
         //Mocking the APIs
-        StorageToComputeEngineAPI computeEngine = Mockito.mock(StorageToComputeEngineAPI.class);
-        LucasComputerAPI lucasComputerAPI = Mockito.mock(LucasComputerAPI.class);
+        StorageToComputeEngineAPI computeEngine = mock(StorageToComputeEngineAPI.class);
+        LucasComputerAPI lucasComputerAPI = mock(LucasComputerAPI.class);
         
         //Mocking the input
-        Input input = Mockito.mock(Input.class);
+        Input input = mock(Input.class);
 
         //Mocking the output
-        Output output = Mockito.mock(Output.class);
+        Output output = mock(Output.class);
 
         // Setup behavior
         doReturn(output).when(lucasComputerAPI).computeLucas(input); // Assuming computeLucas returns an Output
@@ -38,7 +45,6 @@ public class TestLucasNumberCalculator {
         doNothing().when(lucasComputerAPI).write(output);
 
         //Mocking the computeLucas
-        
         doNothing().when(lucasComputerAPI).computeLucas(input);
 
         //Mocking the getResult
@@ -53,9 +59,5 @@ public class TestLucasNumberCalculator {
             // For example, you can return a specific value or perform some actions
             return null;
         }).when(lucasComputerAPI).sendResult();
-
-
     }
-    
-    
 }
