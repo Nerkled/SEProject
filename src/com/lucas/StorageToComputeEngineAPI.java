@@ -8,3 +8,9 @@ public interface StorageToComputeEngineAPI {
     void read(Input input);
     // reads from user-specified input sources
 }
+
+    void read(Input input);
+    // reads from user-specified input sources
+}
+
+

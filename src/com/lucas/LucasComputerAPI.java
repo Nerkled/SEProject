@@ -15,6 +15,4 @@ public interface LucasComputerAPI {
     void enumResult();
     //6: Send back to StorageToComputeEngineAPI
     void sendResult();
-    //need a getter
-    void getLucasComputerAPI();
 } 

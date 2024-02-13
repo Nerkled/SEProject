@@ -17,7 +17,6 @@ public class LucasNumberCalculator implements LucasComputerAPI {
         this.read(input); // Note: This will cause a StackOverflowError
     }
 
-
     // 3: Write Data
     public void write(Output output) {
         this.write(output); // Note: This will cause a StackOverflowError
@@ -43,10 +42,10 @@ public class LucasNumberCalculator implements LucasComputerAPI {
     public void sendResult() {
         this.sendResult(); // Note: This will cause a StackOverflowError
     }
-
     @Override
     public void getLucasComputerAPI() {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'getLucasComputerAPI'");
     }
+
 }
