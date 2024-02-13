@@ -4,25 +4,12 @@ import com.lucas.Source;
 import com.lucas.StorageToComputeEngineAPI;
 import com.lucas.UserToComputeEngineAPI;
 import com.lucas.UserToComputeEngineImp;
-import com.lucas.StorageToComputeEngineImp;
-
-
 import org.junit.Test;
 import org.mockito.Mockito;
-
-import com.lucas.Source;
-import com.lucas.StorageToComputeEngineAPI;
-import com.lucas.UserToComputeEngineAPI;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.verify;
-
-
-
-
-
 public class TestUserToComputeEngineAPI{
     @Test
     public void testAPI(){
@@ -55,7 +42,7 @@ public class TestUserToComputeEngineAPI{
         //Input input= new Input( );
         Input input= null;
         userAPI.setComputationInput(input);
-        assertEquals (input, userAPI.getComputationInput());
+        assertEquals(input, userAPI.getComputationInput());
 
         //lucas number computation test
         userAPI.executeLucasNumberComputation();
