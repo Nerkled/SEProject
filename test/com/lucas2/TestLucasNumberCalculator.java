@@ -1,9 +1,16 @@
 package com.lucas2;
 import org.junit.Test;
+
 //import org.mockito.Mockito;
 
 // Lucas Methods
 //import com.lucas.StorageToComputeEngineAPI;
+
+import org.mockito.Mockito;
+
+// Lucas Methods
+import com.lucas.StorageToComputeEngineAPI;
+
 import com.lucas.LucasComputerAPI;
 import com.lucas.Input;
 import com.lucas.Output;
@@ -21,7 +28,11 @@ public class TestLucasNumberCalculator {
     @Test
     public void testCoordinatorSmoke() {
         //Mocking the APIs
+
         //StorageToComputeEngineAPI computeEngine = mock(StorageToComputeEngineAPI.class);
+
+        StorageToComputeEngineAPI computeEngine = mock(StorageToComputeEngineAPI.class);
+
         LucasComputerAPI lucasComputerAPI = mock(LucasComputerAPI.class);
         
         //Mocking the input

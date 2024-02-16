@@ -42,8 +42,12 @@ public class TestUserToComputeEngineAPI{
         //testing setComputationInput
         //Input input= new Input( );
         Input input= null;
+
         userAPI.setInputSource(source);
         assertEquals(input, userAPI.getInputSource());
+
+        userAPI.setComputationInput(input);
+        assertEquals(input, userAPI.getComputationInput());
 
         //lucas number computation test
         userAPI.executeLucasNumberComputation();
