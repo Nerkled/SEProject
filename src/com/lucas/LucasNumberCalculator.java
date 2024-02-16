@@ -1,6 +1,8 @@
 package com.lucas;
 import com.lucas2.InMemoryImpStorageToComputeEngine;
 
+
+@SuppressWarnings("unused")
 public class LucasNumberCalculator implements LucasComputerAPI {
 
     private StorageToComputeEngineAPI storageToComputeEngineAPI;
@@ -11,7 +13,7 @@ public class LucasNumberCalculator implements LucasComputerAPI {
         this.inMemoryImpStorageToComputeEngine = inMemoryImpStorageToComputeEngine;
     }
 
-    // TODO: Add any additional methods or functionality as needed
+    // 1TODO: Add any additional methods or functionality as needed
 
     // 1: Initialize the API
     public void initialize() {
@@ -35,7 +37,9 @@ public class LucasNumberCalculator implements LucasComputerAPI {
 
     // 5: Get the result
     public void getResult() {
-        // TODO: Implement the getResult() method
+
+        // 2TODO: Implement the getResult() method
+
         //this.getResult(); // Note: This will cause a StackOverflowError
     }
 

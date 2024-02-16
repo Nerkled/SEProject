@@ -3,9 +3,12 @@ public class UserToComputeEngineImp implements UserToComputeEngineAPI {
 
     private Input input;
     private Source source;
+    @SuppressWarnings("unused")
     private String resultDelimiter;
     private Source destination;
+    @SuppressWarnings("unused")
     private DelimiterResponse option;
+    @SuppressWarnings("unused")
     private StorageToComputeEngineAPI storageToComputeEngineAPI;
 
     public UserToComputeEngineImp(StorageToComputeEngineAPI storageToComputeEngineAPI) {
@@ -28,9 +31,6 @@ public class UserToComputeEngineImp implements UserToComputeEngineAPI {
         this.option = option;
     }
 
-    public void setComputationInput(Input input) {
-        this.input = input;
-    }
 
     public void executeLucasNumberComputation() {
         // code to execute lucas number computation
