@@ -1,3 +1,4 @@
+package com.lucas2;
 import com.lucas.Input;
 import com.lucas.Output;
 import com.lucas.Source;
@@ -41,6 +42,10 @@ public class TestUserToComputeEngineAPI{
         //testing setComputationInput
         //Input input= new Input( );
         Input input= null;
+
+        userAPI.setInputSource(source);
+        assertEquals(input, userAPI.getInputSource());
+
         userAPI.setComputationInput(input);
         assertEquals(input, userAPI.getComputationInput());
 
