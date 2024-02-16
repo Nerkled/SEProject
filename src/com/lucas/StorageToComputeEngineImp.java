@@ -1,5 +1,5 @@
 package com.lucas;
-
+import java.util.List;
 public class StorageToComputeEngineImp implements StorageToComputeEngineAPI {
     private Input input;
     private Output output;
@@ -20,7 +20,8 @@ public class StorageToComputeEngineImp implements StorageToComputeEngineAPI {
         this.output = output;
     }
 
-    public void read(Input input) {
+    public List<Integer> read(Input input) {
+        return null;
         // Empty implementation 
     }
 
