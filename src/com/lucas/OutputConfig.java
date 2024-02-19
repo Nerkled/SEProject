@@ -1,5 +1,5 @@
 package com.lucas;
 
-public interface OutputConfig {
+public interface OutputConfig{
 
 }

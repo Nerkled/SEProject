@@ -1,6 +1,6 @@
 package com.lucas;
 import java.util.List;
-public class StorageToComputeEngineImp implements StorageToComputeEngineAPI {
+public class StorageToComputeEngineImp implements StorageToComputeEngineAPI{
     private InputConfig input;
     private OutputConfig output;
 
