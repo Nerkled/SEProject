@@ -1,6 +1,6 @@
 package com.lucas;
 
-public interface ComputeResult{
+public interface ComputeResult {
     static ComputeResult SUCCESS = () -> Status.SUCCESS;
     static ComputeResult FAILURE = () -> Status.FAILURE;
     
