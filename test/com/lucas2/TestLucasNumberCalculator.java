@@ -6,10 +6,9 @@ import org.junit.Test;
 // Lucas Methods
 //import com.lucas.StorageToComputeEngineAPI;
 
-import org.mockito.Mockito;
+//import org.mockito.Mockito;
 
 // Lucas Methods
-import com.lucas.StorageToComputeEngineAPI;
 
 import com.lucas.LucasComputerAPI;
 import com.lucas.Input;
@@ -31,7 +30,6 @@ public class TestLucasNumberCalculator {
 
         //StorageToComputeEngineAPI computeEngine = mock(StorageToComputeEngineAPI.class);
 
-        StorageToComputeEngineAPI computeEngine = mock(StorageToComputeEngineAPI.class);
 
         LucasComputerAPI lucasComputerAPI = mock(LucasComputerAPI.class);
         
