@@ -16,7 +16,7 @@ public class ComputeEngineIntegrationTest {
     @Test
     public void testComputeEngineIntegration() {
         // Set up input values for the test
-        InputConfig inputConfig = new InputConfig(Arrays.asList(1, 10, 25));
+        InMemoryInputConfig inputConfig = new InMemoryInputConfig(Arrays.asList(1, 10, 25));
 
         // Create in-memory storage implementation
         InMemoryImpStorageToComputeEngine storage = new InMemoryImpStorageToComputeEngine();
@@ -33,7 +33,7 @@ public class ComputeEngineIntegrationTest {
         lucasCalculator.sendResult();
 
         // Validate the output against the expected result
-        OutputConfig expectedOutput = new OutputConfig(Arrays.asList("the expected output should be here"));
+        InMemoryOutputConfig expectedOutput = new InMemoryOutputConfig(Arrays.asList("the expected output should be here"));
         assertEquals(expectedOutput.getStrings(), storage.getInMemoryOutput());
     }
 }
