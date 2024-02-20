@@ -2,12 +2,12 @@ package com.lucas;
 
 public class UserToComputeEngineImp implements UserToComputeEngineAPI {
 
-    private final StorageToComputeEngineAPI datastore;
-    private final ComputeEngine computeengine;
+    private final StorageToComputeEngineAPI dataStore;
+    private final ComputeEngine computeEngine;
 
     public UserToComputeEngineImp(StorageToComputeEngineAPI datastore, ComputeEngine computeengine) {
-        this.datastore = datastore;
-        this.computeengine = computeengine;
+        this.dataStore = datastore;
+        this.computeEngine = computeengine;
     }
 
     //@Override

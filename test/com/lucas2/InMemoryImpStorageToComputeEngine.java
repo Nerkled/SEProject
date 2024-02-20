@@ -10,10 +10,10 @@ public class InMemoryImpStorageToComputeEngine{
         this.inputIntegers = new ArrayList<>();
         this.outputStrings = new ArrayList<>();
     }
-    public void readInput(InputConfig inputConfig){
+    public void readInput(InMemoryInputConfig inputConfig){
         this.inputIntegers = new ArrayList<>(inputConfig.getIntegers());
     }
-    public void writeOutput(OutputConfig outputConfig){
+    public void writeOutput(InMemoryOutputConfig outputConfig){
         this.outputStrings = new ArrayList<>(outputConfig.getStrings());
     }
     public List<Integer> getInMemoryInput(){
