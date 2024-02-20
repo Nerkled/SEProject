@@ -1,39 +1,50 @@
 package com.lucas2;
-import com.lucas.Input;
-import com.lucas.LucasComputerAPI;
-import com.lucas.LucasNumberCalculator;
-import com.lucas.StorageToComputeEngineAPI;
+
+import com.lucas.UserToComputeEngineAPI;
+import com.lucas.UserToComputeEngineImp;
+import org.junit.Assert;
+import com.lucas.ComputeEngine;
+import com.lucas.ComputeRequest;
+import com.lucas.ComputeResult;
+import com.lucas.ImpComputeEngine;
 import org.junit.Test;
+import org.mockito.Mockito;
 
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.List;
 
-import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.when;
 
 
-@SuppressWarnings("unused")
 public class ComputeEngineIntegrationTest {
 
     @Test
     public void testComputeEngineIntegration() {
         // Set up input values for the test
-        InMemoryInputConfig inputConfig = new InMemoryInputConfig(Arrays.asList(1, 10, 25));
+        ComputeEngine engine = new ImpComputeEngine();
 
-        // Create in-memory storage implementation
-        InMemoryImpStorageToComputeEngine storage = new InMemoryImpStorageToComputeEngine();
+        TestStorageToComputeEngine testStorage = new TestStorageToComputeEngine();
 
-        // Create LucasNumberCalculator instance
-        LucasComputerAPI lucasCalculator = new LucasNumberCalculator(storage);
+        UserToComputeEngineAPI userToComputeEngineAPI = new UserToComputeEngineImp(engine, testStorage);
 
-        // Execute computation using the LucasNumberCalculator
-        lucasCalculator.initialize();
-        lucasCalculator.read(inputConfig);
-        lucasCalculator.computeLucas(inputConfig);
-        lucasCalculator.getResult();
-        lucasCalculator.enumResult();
-        lucasCalculator.sendResult();
+        InMemoryInputConfig input = new InMemoryInputConfig(1, 10, 25);
 
-        // Validate the output against the expected result
-        InMemoryOutputConfig expectedOutput = new InMemoryOutputConfig(Arrays.asList("the expected output should be here"));
-        assertEquals(expectedOutput.getStrings(), storage.getInMemoryOutput());
+        InMemoryOutputConfig output = new InMemoryOutputConfig();
+
+        ComputeRequest mockRequest = Mockito.mock(ComputeRequest.class);
+        when(mockRequest.getInputConfig()).thenReturn(input);
+        when(mockRequest.getOutputConfig()).thenReturn(output);
+        
+        ComputeResult result = userToComputeEngineAPI.compute(mockRequest);
+
+        Assert.assertEquals(ComputeResult.SUCCESS, result);
+
+        List<String> expected = new ArrayList<>();
+		expected.add("1");
+		expected.add("10");
+		expected.add("25");
+    
+        Assert.assertEquals(expected, output.getOutputMutable());
+        
     }
 }
