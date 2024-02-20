@@ -1,31 +1,12 @@
 package com.lucas;
 import java.util.List;
 public class StorageToComputeEngineImp implements StorageToComputeEngineAPI{
-    private InputConfig input;
-    private OutputConfig output;
-
-    public InputConfig getInput() {
-        return input;
-    }
-
-    public OutputConfig getOutput() {
-        return output;
-    }
-
-    public void setInput(InputConfig input) {
-        this.input = input;
-    }
-
-    public void setOutput(OutputConfig output) {
-        this.output = output;
-    }
-
     public List<Integer> read(InputConfig input) {
         return null;
-        // Empty implementation 
+        // Empty implementation of read method.
     }
-
-    public void write(OutputConfig output) {
-        // Empty implementation 
+    public Result write(OutputConfig output, String result) {
+        return() -> Result.ResultStatus.SUCCESS;
+        // lambda expression that returns a ResultStatus of SUCCESS.
     }
 }
