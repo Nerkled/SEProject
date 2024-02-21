@@ -8,15 +8,11 @@ import com.lucas.ComputeResult;
 import com.lucas.ImpComputeEngine;
 import com.lucas.StorageToComputeEngineAPI;
 import com.lucas.StorageToComputeEngineImp;
-
 import org.junit.Test;
 import org.mockito.Mockito;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import static org.mockito.Mockito.when;
-
 
 public class ComputeEngineIntegrationTest {
 
