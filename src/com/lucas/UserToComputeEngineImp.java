@@ -1,7 +1,6 @@
 package com.lucas;
-
+@SuppressWarnings("unused")
 public class UserToComputeEngineImp implements UserToComputeEngineAPI {
-
     private final StorageToComputeEngineAPI dataStore;
     private final ComputeEngine computeEngine;
 

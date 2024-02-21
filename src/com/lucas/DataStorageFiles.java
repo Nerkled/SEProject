@@ -17,7 +17,7 @@ public class DataStorageFiles implements StorageToComputeEngineAPI {
     }
 
     @Override
-    public Iterable<Integer> read(InputConfig input) {
+    public List<Integer> read(InputConfig input) {
         List<Integer> list = new ArrayList<>();
         try (Scanner scanner = new Scanner(new File(filePath))) {
             while (scanner.hasNextLine()) {
