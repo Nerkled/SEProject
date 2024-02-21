@@ -5,9 +5,9 @@ public class UserToComputeEngineImp implements UserToComputeEngineAPI {
     private final StorageToComputeEngineAPI dataStore;
     private final ComputeEngine computeEngine;
 
-    public UserToComputeEngineImp(StorageToComputeEngineAPI datastore, ComputeEngine computeengine) {
-        this.dataStore = datastore;
-        this.computeEngine = computeengine;
+    public UserToComputeEngineImp(StorageToComputeEngineAPI dataStore, ComputeEngine computeEngine) {
+        this.dataStore = dataStore;
+        this.computeEngine = computeEngine;
     }
 
     //@Override
