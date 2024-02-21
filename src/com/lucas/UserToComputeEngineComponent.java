@@ -15,7 +15,7 @@ public class UserToComputeEngineComponent implements UserToComputeEngineAPI {
 
     @Override
     public ComputeResult compute(ComputeRequest request) {
-         try {
+        try {
             // b. Request data storage to read integers from the specified location
             InputConfig inputConfig = request.getInputConfig();
             OutputConfig outputConfig = request.getOutputConfig();
