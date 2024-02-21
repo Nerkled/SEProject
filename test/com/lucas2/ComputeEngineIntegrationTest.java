@@ -1,4 +1,5 @@
 package com.lucas2;
+
 import com.lucas.UserToComputeEngineAPI;
 import com.lucas.UserToComputeEngineImp;
 import org.junit.Assert;
@@ -17,7 +18,6 @@ import java.util.List;
 
 import static org.mockito.Mockito.when;
 
-
 public class ComputeEngineIntegrationTest {
 
     @Test
@@ -28,7 +28,7 @@ public class ComputeEngineIntegrationTest {
         //TestStorageToComputeEngine testStorage = new TestStorageToComputeEngine();
         StorageToComputeEngineAPI dataStorage = new StorageToComputeEngineImp();
         //storageToComputeEngine & compute engine
-        UserToComputeEngineAPI userToComputeEngineAPI = new UserToComputeEngineImp(dataStorage,engine);
+        UserToComputeEngineAPI userToComputeEngineAPI = new UserToComputeEngineImp(dataStorage, engine);
 
         InMemoryInputConfig input = new InMemoryInputConfig(1, 10, 25);
 
@@ -37,16 +37,16 @@ public class ComputeEngineIntegrationTest {
         ComputeRequest mockRequest = Mockito.mock(ComputeRequest.class);
         when(mockRequest.getInputConfig()).thenReturn(input);
         when(mockRequest.getOutputConfig()).thenReturn(output);
-        
+
         ComputeResult result = userToComputeEngineAPI.compute(mockRequest);
 
         Assert.assertEquals(ComputeResult.SUCCESS, result);
 
         List<String> expected = new ArrayList<>();
-		expected.add("1");
-		expected.add("10");
-		expected.add("25");
-    
+        expected.add("1");
+        expected.add("10");
+        expected.add("25");
+
         Assert.assertEquals(expected, output.getStrings());
     }
 }
