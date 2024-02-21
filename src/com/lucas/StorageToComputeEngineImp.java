@@ -1,11 +1,12 @@
 package com.lucas;
 import java.util.List;
+import java.util.Arrays;
 import com.lucas.Result.ResultStatus;
 @SuppressWarnings("unused")
 public class StorageToComputeEngineImp implements StorageToComputeEngineAPI{
     @Override
     public List<Integer> read(InputConfig input) {
-        return null;
+        return Arrays.asList(1);
         // Empty implementation of read method.
     }
     @Override
