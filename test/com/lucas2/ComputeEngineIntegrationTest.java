@@ -7,14 +7,13 @@ import com.lucas.ComputeEngine;
 import com.lucas.ComputeRequest;
 import com.lucas.ComputeResult;
 import com.lucas.ImpComputeEngine;
+import com.lucas.StorageToComputeEngineAPI;
+import com.lucas.StorageToComputeEngineImp;
 import org.junit.Test;
 import org.mockito.Mockito;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import static org.mockito.Mockito.when;
-
 
 public class ComputeEngineIntegrationTest {
 
@@ -23,9 +22,10 @@ public class ComputeEngineIntegrationTest {
         // Set up input values for the test
         ComputeEngine engine = new ImpComputeEngine();
 
-        TestStorageToComputeEngine testStorage = new TestStorageToComputeEngine();
-
-        UserToComputeEngineAPI userToComputeEngineAPI = new UserToComputeEngineImp(engine, testStorage);
+        //TestStorageToComputeEngine testStorage = new TestStorageToComputeEngine();
+        StorageToComputeEngineAPI dataStorage = new StorageToComputeEngineImp();
+        //storageToComputeEngine & compute engine
+        UserToComputeEngineAPI userToComputeEngineAPI = new UserToComputeEngineImp(dataStorage, engine);
 
         InMemoryInputConfig input = new InMemoryInputConfig(1, 10, 25);
 
@@ -43,8 +43,7 @@ public class ComputeEngineIntegrationTest {
         expected.add("1");
         expected.add("10");
         expected.add("25");
-
-        Assert.assertEquals(expected, output.getOutputMutable());
-
+//changing
+        Assert.assertEquals(expected, output.getStrings());
     }
 }

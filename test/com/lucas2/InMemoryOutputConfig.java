@@ -9,4 +9,5 @@ public class InMemoryOutputConfig implements OutputConfig {
     public List<String> getStrings() {
         return new ArrayList<>(output);
     }
+    
 }
