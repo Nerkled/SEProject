@@ -37,7 +37,7 @@ public class ComputeEngineIntegrationTest {
 
         ComputeResult result = userToComputeEngineAPI.compute(mockRequest);
 
-        Assert.assertEquals(ComputeResult.SUCCESS, result);
+        Assert.assertEquals(ComputeResult.SUCCESS.getStatus(), result.getStatus());
 
         List<String> expected = new ArrayList<>();
         expected.add("1");
