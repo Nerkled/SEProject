@@ -1,5 +1,7 @@
 package com.lucas;
 
-public interface OutputConfig{
+import java.util.List;
 
+public interface OutputConfig{
+    List<String> getStrings();
 }

@@ -9,7 +9,7 @@ public class InMemoryInputConfig implements InputConfig{
     private final List<Integer> inputs = new ArrayList<>();
     public InMemoryInputConfig(int... inputs) {
         for (int i =0; i < inputs.length; i++) {
-            this.inputs.add(i);
+            this.inputs.add(inputs[i]);
         }
     }
     public InMemoryInputConfig(Collection<Integer> inputs) {

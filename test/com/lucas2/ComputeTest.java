@@ -17,6 +17,6 @@ public class ComputeTest {
         List<Integer> values = new ArrayList<>();
         values.add(1);
         ComputeEngine engine = new ImpComputeEngine();
-        Assert.assertEquals("1", engine.compute(values));
+        Assert.assertEquals("[1]", engine.compute(values));
     }
 }
