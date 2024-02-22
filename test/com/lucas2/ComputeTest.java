@@ -18,5 +18,6 @@ public class ComputeTest {
         values.add(1);
         ComputeEngine engine = new ImpComputeEngine();
         Assert.assertEquals("The result is: [1]", engine.compute(values));
+
     }
 }
