@@ -10,6 +10,8 @@ import com.lucas.UserToComputeEngineAPI;
 import com.lucas.UserToComputeEngineImp;
 import com.lucas.ComputeRequest;
 import com.lucas.ComputeResult;
+import com.lucas.OutputConfig;
+import com.lucas.Result;
 
 public class TestUserToComputeEngineAPI {
 
@@ -18,9 +20,9 @@ public class TestUserToComputeEngineAPI {
         // mock out the dependencies so that we're just checking the User To ComputeEngine
         StorageToComputeEngineAPI dataStore = Mockito.mock(StorageToComputeEngineAPI.class);
         ComputeEngine computeEngine = Mockito.mock(ComputeEngine.class);
-        UserToComputeEngineAPI coord = new UserToComputeEngineImp(dataStore, computeEngine);
+        UserToComputeEngineAPI coordinator = new UserToComputeEngineImp(dataStore, computeEngine);
         ComputeRequest mockRequest = Mockito.mock(ComputeRequest.class);
-        ComputeResult result = coord.compute(mockRequest);
-        Assert.assertEquals(result.getStatus(), ComputeResult.Status.SUCCESS);
+        ComputeResult result = coordinator.compute(mockRequest);
+        Assert.assertEquals(ComputeResult.Status.SUCCESS,result.getStatus());
     }
 }
