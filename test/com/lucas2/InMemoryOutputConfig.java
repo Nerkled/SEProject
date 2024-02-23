@@ -7,7 +7,7 @@ public class InMemoryOutputConfig implements OutputConfig {
     private final List<String> output = new ArrayList<>();
 
     public List<String> getStrings() {
-        return new ArrayList<>(output);
+        return output;
     }
     
 }
