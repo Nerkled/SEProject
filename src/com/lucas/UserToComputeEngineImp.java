@@ -15,6 +15,6 @@ public class UserToComputeEngineImp implements UserToComputeEngineAPI {
     //@Override
     //Massive Change here
     public ComputeResult compute(ComputeRequest request) {
-        return ComputeResult.FAILURE;
+        return ComputeResult.SUCCESS;
     }
 }
