@@ -1,6 +1,6 @@
 package com.lucas2;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import com.lucas.ComputeEngine;
 import com.lucas.ImpComputeEngine;
 import java.util.ArrayList;
