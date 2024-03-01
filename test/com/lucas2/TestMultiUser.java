@@ -67,6 +67,7 @@ public class TestMultiUser {
         List<String> multiThreaded = loadAllOutput(multiThreadFilePrefix, numThreads);
         Assert.assertEquals(singleThreaded, multiThreaded);
     }
+	//idk
     private List<String> loadAllOutput(String prefix, int numThreads) throws IOException {
         List<String> result = new ArrayList<>();
         for (int i = 0; i < numThreads; i++) {
