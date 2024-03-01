@@ -1,5 +1,7 @@
 package com.lucas2;
 
+import static org.mockito.Mockito.when;
+
 import java.util.ArrayList;
 
 import java.util.Collections;
@@ -41,9 +43,9 @@ public class TestUserToComputeEngineAPI {
 
         ComputeRequest mockRequest = Mockito.mock(ComputeRequest.class);
         InputConfig inputConfig = Mockito.mock(InputConfig.class);
-
-        Mockito.when(mockRequest.getInputConfig()).thenReturn(inputConfig);
-        Mockito.when(inputConfig.getIntegers()).thenReturn(Collections.emptyList());  
+        OutputConfig outputConfig = Mockito.mock(OutputConfig.class);
+        when(mockRequest.getInputConfig()).thenReturn(inputConfig);
+        when(mockRequest.getOutputConfig()).thenReturn(outputConfig); 
 
         // Mocking the behavior of your components
         Mockito.when(dataStore.read(inputConfig)).thenReturn(Collections.emptyList());
