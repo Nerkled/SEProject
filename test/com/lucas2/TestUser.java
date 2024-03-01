@@ -1,15 +1,17 @@
-package edu.softwareeng.sample;
+package com.lucas2;
 
 import java.io.File;
+
+import com.lucas.UserToComputeEngineAPI;
 
 
 public class TestUser {
 	
 	// TODO 3: change the type of this variable to the name you're using for your
 	// User <-> ComputeEngine API; also update the parameter passed to the constructor
-	private final ComputationCoordinator coordinator;
+	private final UserToComputeEngineAPI coordinator;
 
-	public TestUser(ComputationCoordinator coordinator) {
+	public TestUser(UserToComputeEngineAPI coordinator) {
 		this.coordinator = coordinator;
 	}
 
