@@ -42,11 +42,11 @@ public class TestUserToComputeEngineAPI {
         UserToComputeEngineAPI coordinator = new UserToComputeEngineImp(dataStore, computeEngine);
 
         ComputeRequest mockRequest = Mockito.mock(ComputeRequest.class);
-        //updated
+        // Updated: Mock InputConfig and OutputConfig
         InputConfig inputConfig = Mockito.mock(InputConfig.class);
         OutputConfig outputConfig = Mockito.mock(OutputConfig.class);
         when(mockRequest.getInputConfig()).thenReturn(inputConfig);
-        when(mockRequest.getOutputConfig()).thenReturn(outputConfig); 
+        when(mockRequest.getOutputConfig()).thenReturn(outputConfig);
 
         // Mocking the behavior of your components
         Mockito.when(dataStore.read(inputConfig)).thenReturn(Collections.emptyList());
@@ -56,5 +56,6 @@ public class TestUserToComputeEngineAPI {
 
         // Assert
         Assert.assertEquals(ComputeResult.Status.SUCCESS, result.getStatus());
-    }  
+    }
+
 }
