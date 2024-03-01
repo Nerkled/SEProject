@@ -39,7 +39,6 @@ public class TestMultiUser {
         String singleThreadFilePrefix = "testMultiUser.compareMultiAndSingleThreaded.test.singleThreadOut.tmp";
         for (int i = 0; i < numThreads; i++) {
             File singleThreadedOut = new File(singleThreadFilePrefix + i);
-            //singleThreadedOut.deleteOnExit();
             testUsers.get(i).run(singleThreadedOut.getCanonicalPath());
         }
 
@@ -49,7 +48,6 @@ public class TestMultiUser {
         String multiThreadFilePrefix = "testMultiUser.compareMultiAndSingleThreaded.test.multiThreadOut.tmp";
         for (int i = 0; i < numThreads; i++) {
             File multiThreadedOut = new File(multiThreadFilePrefix + i);
-            multiThreadedOut.deleteOnExit();
             String multiThreadOutputPath = multiThreadedOut.getCanonicalPath();
             TestUser testUser = testUsers.get(i);
             results.add(threadPool.submit(() -> testUser.run(multiThreadOutputPath)));
@@ -62,11 +60,25 @@ public class TestMultiUser {
                 throw new RuntimeException(e);
             }
         });
+
+        // Shutdown the thread pool
+        threadPool.shutdown();
+
+        // Explicitly delete the temporary files after the tests
+        for (int i = 0; i < numThreads; i++) {
+            File singleThreadedOut = new File(singleThreadFilePrefix + i);
+            singleThreadedOut.delete();
+
+            File multiThreadedOut = new File(multiThreadFilePrefix + i);
+            multiThreadedOut.delete();
+        }
+
         // Check that the output is the same for multi-threaded and single-threaded
         List<String> singleThreaded = loadAllOutput(singleThreadFilePrefix, numThreads);
         List<String> multiThreaded = loadAllOutput(multiThreadFilePrefix, numThreads);
         Assert.assertEquals(singleThreaded, multiThreaded);
     }
+
     private List<String> loadAllOutput(String prefix, int numThreads) throws IOException {
         List<String> result = new ArrayList<>();
         for (int i = 0; i < numThreads; i++) {
