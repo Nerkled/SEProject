@@ -1,5 +1,7 @@
 package com.lucas2;
 
+import static org.mockito.Mockito.when;
+
 import java.util.ArrayList;
 
 import java.util.Collections;
@@ -40,10 +42,11 @@ public class TestUserToComputeEngineAPI {
         UserToComputeEngineAPI coordinator = new UserToComputeEngineImp(dataStore, computeEngine);
 
         ComputeRequest mockRequest = Mockito.mock(ComputeRequest.class);
+        // Updated: Mock InputConfig and OutputConfig
         InputConfig inputConfig = Mockito.mock(InputConfig.class);
-
-        Mockito.when(mockRequest.getInputConfig()).thenReturn(inputConfig);
-        Mockito.when(inputConfig.getIntegers()).thenReturn(Collections.emptyList());  
+        OutputConfig outputConfig = Mockito.mock(OutputConfig.class);
+        when(mockRequest.getInputConfig()).thenReturn(inputConfig);
+        when(mockRequest.getOutputConfig()).thenReturn(outputConfig);
 
         // Mocking the behavior of your components
         Mockito.when(dataStore.read(inputConfig)).thenReturn(Collections.emptyList());
@@ -53,5 +56,6 @@ public class TestUserToComputeEngineAPI {
 
         // Assert
         Assert.assertEquals(ComputeResult.Status.SUCCESS, result.getStatus());
-    }  
+    }
+
 }
