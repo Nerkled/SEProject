@@ -42,6 +42,7 @@ public class TestUserToComputeEngineAPI {
         UserToComputeEngineAPI coordinator = new UserToComputeEngineImp(dataStore, computeEngine);
 
         ComputeRequest mockRequest = Mockito.mock(ComputeRequest.class);
+        //updated
         InputConfig inputConfig = Mockito.mock(InputConfig.class);
         OutputConfig outputConfig = Mockito.mock(OutputConfig.class);
         when(mockRequest.getInputConfig()).thenReturn(inputConfig);
