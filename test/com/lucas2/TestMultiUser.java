@@ -73,9 +73,9 @@ public class TestMultiUser {
             File multiThreadedOut = new File(prefix + i);
             if(multiThreadedOut.exists()){
 				result.addAll(Files.readAllLines(multiThreadedOut.toPath()));
-			}else {
-				System.out.println("File does not exist: " + multiThreadedOut.getAbsolutePath());
-			}
+			}//else {
+				//System.out.println("File does not exist: " + multiThreadedOut.getAbsolutePath());
+			//}
         }
         return result;
     }
