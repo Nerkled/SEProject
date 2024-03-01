@@ -12,19 +12,26 @@ import java.util.concurrent.Future;
 import org.junit.Assert;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import com.lucas.ComputeEngine;
+import com.lucas.StorageToComputeEngineAPI;
 import com.lucas.UserToComputeEngineAPI;
+import com.lucas.UserToComputeEngineImp;
 
 public class TestMultiUser {
 	
 	// TODO 1: change the type of this variable to the name you're using for your
 	// User <-> ComputeEngine API
 	private  UserToComputeEngineAPI coordinator;
+    private StorageToComputeEngineAPI dataStorage;
+    private ComputeEngine engine;
 	
 	@BeforeEach
 	public void initializeComputeEngine() {
 		//TODO 2: create an instance of your coordinator component; this is the component
 		// that the user will make requests to
 		// Store it in the 'coordinator' instance variable
+        coordinator = new UserToComputeEngineImp(dataStorage, engine);
 		
 	}
 
