@@ -70,14 +70,9 @@ public class TestMultiUser {
     private List<String> loadAllOutput(String prefix, int numThreads) throws IOException {
         List<String> result = new ArrayList<>();
         for (int i = 0; i < numThreads; i++) {
-            File multiThreadedOut = new File(prefix + i);
-            if (multiThreadedOut.exists()) {
-				result.addAll(Files.readAllLines(multiThreadedOut.toPath()));
-			} else {
-				System.out.println("File does not exist: " + multiThreadedOut.getAbsolutePath());
-			}
-			
-        }
+			File multiThreadedOut = new File(prefix + i);
+			result.addAll(Files.readAllLines(multiThreadedOut.toPath()));
+		}
         return result;
     }
 }
