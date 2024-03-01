@@ -12,11 +12,9 @@ import java.util.concurrent.Future;
 import org.junit.Assert;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
 import com.lucas.UserToComputeEngineAPI;
 
 public class TestMultiUser {
-
     // TODO 1: change the type of this variable to the name you're using for your
     // User <-> ComputeEngine API
     private UserToComputeEngineAPI coordinator;
@@ -64,13 +62,11 @@ public class TestMultiUser {
                 throw new RuntimeException(e);
             }
         });
-
         // Check that the output is the same for multi-threaded and single-threaded
         List<String> singleThreaded = loadAllOutput(singleThreadFilePrefix, nThreads);
         List<String> multiThreaded = loadAllOutput(multiThreadFilePrefix, nThreads);
         Assert.assertEquals(singleThreaded, multiThreaded);
     }
-
     private List<String> loadAllOutput(String prefix, int nThreads) throws IOException {
         List<String> result = new ArrayList<>();
         for (int i = 0; i < nThreads; i++) {
