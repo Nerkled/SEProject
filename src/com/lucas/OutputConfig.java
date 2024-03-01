@@ -1,7 +1,16 @@
 package com.lucas;
 
-import java.util.List;
+public interface OutputConfig {
 
-public interface OutputConfig{
-    List<String> getStrings();
+	static interface OutputConfigVisitor {
+		public void visitFile(FileOutputConfig fileOutputConfig);
+	}
+	
+	static void visitOutputConfig(OutputConfig config, OutputConfigVisitor visitor) {
+		if (config instanceof FileOutputConfig) {
+			visitor.visitFile((FileOutputConfig) config);
+		} else {
+			throw new RuntimeException("Unexpected config type: " + config.getClass());
+		}
+	}
 }
