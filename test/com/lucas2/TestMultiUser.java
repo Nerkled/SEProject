@@ -68,10 +68,10 @@ public class TestMultiUser {
     //this method is causing checkstyle errors
     private List<String> loadAllOutput(String prefix, int numThreads) throws IOException {
         List<String> result = new ArrayList<>();
-        for(int i = 0; i < numThreads; i++){
+        for (int i = 0; i < numThreads; i++) {
             File multiThreadedOut = new File(prefix + i);
-			result.addAll(Files.readAllLines(multiThreadedOut.toPath()));
-        }
+            result.addAll(Files.readAllLines(multiThreadedOut.toPath()));
+        }        
         return result;
     }
 }
