@@ -51,7 +51,9 @@ public class DataStorageFiles implements StorageToComputeEngineAPI {
             e.printStackTrace();
             return () -> Result.ResultStatus.FAILURE;
         }
+
     }
+}
 
     /*public class DataStorageFilesTest {
         public static void main(String[] args) {
