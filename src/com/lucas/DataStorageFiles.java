@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+//import com.lucas2.InMemoryInputConfig;
 
 public class DataStorageFiles implements StorageToComputeEngineAPI {
 
@@ -50,8 +51,10 @@ public class DataStorageFiles implements StorageToComputeEngineAPI {
             e.printStackTrace();
             return () -> Result.ResultStatus.FAILURE;
         }
+
     }
 }
+
     /*public class DataStorageFilesTest {
         public static void main(String[] args) {
             StorageToComputeEngineAPI dataStorage = new DataStorageFiles("test/com/lucas2/TestInputFile.test");
@@ -60,4 +63,5 @@ public class DataStorageFiles implements StorageToComputeEngineAPI {
             System.out.println("Data read from file: " + data);
         } 
     } 
+
 }*/
