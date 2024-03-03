@@ -1,5 +1,4 @@
 package com.lucas;
-import com.lucas2.InMemoryInputConfig; //Gradle isnt seeing this import
 import java.io.FileWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -53,13 +52,14 @@ public class DataStorageFiles implements StorageToComputeEngineAPI {
             return () -> Result.ResultStatus.FAILURE;
         }
     }
-    public class Main {
+
+    /*public class DataStorageFilesTest {
         public static void main(String[] args) {
-            StorageToComputeEngineAPI dataStorage = new DataStorageFiles("test/com/lucas2/testInputFile.test");
+            StorageToComputeEngineAPI dataStorage = new DataStorageFiles("test/com/lucas2/TestInputFile.test");
             InputConfig input = new InMemoryInputConfig();
             List<Integer> data = dataStorage.read(input); 
             System.out.println("Data read from file: " + data);
         } 
     } 
-    
-} 
+
+}*/
