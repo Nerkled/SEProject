@@ -15,10 +15,11 @@ sourceSets {
 
 repositories {
     mavenCentral()
+	
 }
 
 dependencies {
-	implementation 'com.lucas2.InMemoryInputConfig'
+	implementation ('com.lucas2.InMemoryInputConfig')
     testImplementation('junit:junit:4.12')
     testImplementation('org.junit.jupiter:junit-jupiter:5.8.2')
 	testImplementation('org.mockito:mockito-core:5.10.0')
