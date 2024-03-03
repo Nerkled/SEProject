@@ -1,5 +1,4 @@
 package com.lucas;
-
 import java.io.FileWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -40,7 +39,10 @@ public class DataStorageFiles implements StorageToComputeEngineAPI {
     @Override
     public Result write(OutputConfig output, String result) {
         try (FileWriter fileWriter = new FileWriter(filePath)) {
-            fileWriter.write(result);
+            String[] numbers = result.split("\n");
+            for (String number : numbers) {
+                fileWriter.write(number + "\n");
+            }
             System.out.println("Write operation successful!");
             return () -> Result.ResultStatus.SUCCESS;
         } catch (IOException e) {
@@ -50,3 +52,12 @@ public class DataStorageFiles implements StorageToComputeEngineAPI {
         }
     }
 }
+    /*public class DataStorageFilesTest {
+        public static void main(String[] args) {
+            StorageToComputeEngineAPI dataStorage = new DataStorageFiles("test/com/lucas2/TestInputFile.test");
+            InputConfig input = new InMemoryInputConfig();
+            List<Integer> data = dataStorage.read(input); 
+            System.out.println("Data read from file: " + data);
+        } 
+    } 
+}*/
