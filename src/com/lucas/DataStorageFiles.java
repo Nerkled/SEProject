@@ -1,5 +1,5 @@
 package com.lucas;
-import com.lucas2.InMemoryInputConfig;
+import com.lucas2.InMemoryInputConfig; //Gradle isnt seeing this import
 import java.io.FileWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
