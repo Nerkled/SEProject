@@ -1,5 +1,8 @@
 package com.lucas;
 import com.lucas.OutputConfig;
+
+import java.util.List;
+
 import com.lucas.InputConfig;
 import com.lucas.Result;
 @SuppressWarnings("unused")
@@ -9,6 +12,6 @@ public interface StorageToComputeEngineAPI {
     // method that checks for a symbol attached to the computed result 
     // in order to send back to the data storage system
     // reads from user-specified input sources
-    Iterable<Integer> read(InputConfig input);
+    List<Integer> read(InputConfig input);
 }
 

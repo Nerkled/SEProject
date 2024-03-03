@@ -15,5 +15,6 @@
         "c:\\Users\\jpf99\\Downloads\\Bollege\\Year3\\SWE\\mockitoJars\\byte-buddy-agent-1.14.11.jar",
         "c:\\Users\\jpf99\\Downloads\\Bollege\\Year3\\SWE\\mockitoJars\\mockito-core-5.10.0.jar"
     ],
-    "java.debug.settings.onBuildFailureProceed": true
+    "java.debug.settings.onBuildFailureProceed": true,
+    "java.configuration.updateBuildConfiguration": "interactive"
 }
