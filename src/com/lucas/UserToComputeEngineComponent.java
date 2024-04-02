@@ -1,8 +1,10 @@
 package com.lucas;
 
 import java.util.List;
+import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 
 public class UserToComputeEngineComponent implements UserToComputeEngineAPI {
 
@@ -13,7 +15,7 @@ public class UserToComputeEngineComponent implements UserToComputeEngineAPI {
     public UserToComputeEngineComponent(DataStorageFiles dataStorage, LucasComputeEngine computeComponent, int numberOfThreads) {
         this.dataStorage = dataStorage;
         this.computeComponent = computeComponent;
-        this.threadPool = Executors.newFixedThreadPool(numberOfThreads); 
+        this.threadPool = Executors.newFixedThreadPool(numberOfThreads);
     }
 
     @Override
@@ -24,24 +26,20 @@ public class UserToComputeEngineComponent implements UserToComputeEngineAPI {
             OutputConfig outputConfig = request.getOutputConfig();
             List<Integer> inputIntegers = dataStorage.read(inputConfig);
 
-            //thread
-            threadPool.submit(() -> {
-                try {
-                    String result = computeComponent.compute(inputIntegers);
-
-                    // d. Request data storage to write the results to the output
+            // hopefully this is now parallel
+            for (Integer input : inputIntegers) {
+                Callable<Void> task = () -> {
+                    String result = computeComponent.compute(input);
                     Result storageResult = dataStorage.write(outputConfig, result);
-
-                    // Handle the result or any additional coordination logic
                     if (storageResult.getResult() == Result.ResultStatus.SUCCESS) {
                         System.out.println("Computation and storage successful");
                     } else {
                         System.out.println("Computation or storage failed");
                     }
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            });
+                    return null; // Return type is Void
+                };
+                threadPool.submit(task);
+            }
 
             return ComputeResult.SUCCESS;
 
