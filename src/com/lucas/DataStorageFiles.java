@@ -15,26 +15,31 @@ public class DataStorageFiles implements StorageToComputeEngineAPI {
     public DataStorageFiles(String filePath) {
         this.filePath = filePath;
     }
-
-    @Override
+    
     public List<Integer> read(InputConfig input) {
         List<Integer> list = new ArrayList<>();
-        try (Scanner scanner = new Scanner(new File(filePath))) {
-            while (scanner.hasNextLine()) {
-                String data = scanner.nextLine();
-                try {
-                    int value = Integer.parseInt(data);
-                    list.add(value);
-                } catch (NumberFormatException e) {
-                    System.err.println("Error parsing data: " + data);
+        return InputConfig.visitInputConfig(input, new InputConfig.InputConfigVisitor<List<Integer>>() {
+            @Override
+            public List<Integer> visitFile(FileInputConfig fileInputConfig) {
+                String filePath = fileInputConfig.getFileName(); // Assuming fileInputConfig provides a method to get the file path
+                try (Scanner scanner = new Scanner(new File(filePath))) {
+                    while (scanner.hasNextLine()) {
+                        String data = scanner.nextLine();
+                        try {
+                            int value = Integer.parseInt(data);
+                            list.add(value);
+                        } catch (NumberFormatException e) {
+                            System.err.println("Error parsing data: " + data);
+                            e.printStackTrace();
+                        }
+                    }
+                } catch (FileNotFoundException e) {
+                    System.err.println("File not found: " + filePath);
                     e.printStackTrace();
                 }
+                return list;
             }
-        } catch (FileNotFoundException e) {
-            System.err.println("File not found: " + filePath);
-            e.printStackTrace();
-        }
-        return list;
+        });
     }
 
     @Override
@@ -63,5 +68,4 @@ public class DataStorageFiles implements StorageToComputeEngineAPI {
             System.out.println("Data read from file: " + data);
         } 
     } 
-
 }*/
