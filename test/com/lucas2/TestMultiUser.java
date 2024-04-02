@@ -14,17 +14,18 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import com.lucas.ComputeEngine;
-import com.lucas.StorageToComputeEngineAPI;
-import com.lucas.UserToComputeEngineAPI;
+import com.lucas.StorageToComputeEngineImp;
 import com.lucas.UserToComputeEngineImp;
+import com.lucas.UserToComputeEngineImp;
+import com.lucas.ImpComputeEngine;
 
 public class TestMultiUser {
 
     // TODO 1: change the type of this variable to the name you're using for your
     // User <-> ComputeEngine API
-    private UserToComputeEngineAPI coordinator;
-    private StorageToComputeEngineAPI dataStorage;
-    private ComputeEngine engine;
+    private UserToComputeEngineImp coordinator;
+    private StorageToComputeEngineImp dataStorage;
+    private ImpComputeEngine engine;
 
     @BeforeEach
     public void initializeComputeEngine() {
@@ -52,7 +53,7 @@ public class TestMultiUser {
             testUsers.get(i).run(singleThreadedOut.getCanonicalPath());
         }
 
-        // Run multi-threaded
+        // Run multithreaded
         ExecutorService threadPool = Executors.newCachedThreadPool();
         List<Future<?>> results = new ArrayList<>();
         String multiThreadFilePrefix = "testMultiUser.compareMultiAndSingleThreaded.test.multiThreadOut.tmp";
@@ -72,7 +73,7 @@ public class TestMultiUser {
             }
         });
 
-        // Check that the output is the same for multi-threaded and single-threaded
+        // Check that the output is the same for multithreaded and single-threaded
         List<String> singleThreaded = loadAllOutput(singleThreadFilePrefix, numThreads);
         List<String> multiThreaded = loadAllOutput(multiThreadFilePrefix, numThreads);
         Assert.assertEquals(singleThreaded, multiThreaded);
