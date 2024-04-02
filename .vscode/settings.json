@@ -16,5 +16,5 @@
         "c:\\Users\\jpf99\\Downloads\\Bollege\\Year3\\SWE\\mockitoJars\\mockito-core-5.10.0.jar"
     ],
     "java.debug.settings.onBuildFailureProceed": true,
-    "java.configuration.updateBuildConfiguration": "interactive"
+    "java.configuration.updateBuildConfiguration": "automatic"
 }
