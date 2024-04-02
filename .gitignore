@@ -1,2 +1,7 @@
-
 *.class
+.classpath
+.project
+.settings
+*.iml
+*.ipr
+*.iws
