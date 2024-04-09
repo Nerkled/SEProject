@@ -19,7 +19,7 @@ public class UserToComputeEngineComponent implements UserToComputeEngineAPI {
     }
 
     @Override
-    public ComputeResult compute(ComputeRequest request) {
+    public ComputeResult compute(Request request) {
         try {
 
             InputConfig inputConfig = request.getInputConfig();
@@ -38,7 +38,7 @@ public class UserToComputeEngineComponent implements UserToComputeEngineAPI {
                     }
                     return null; // Return type is Void
                 };
-                threadPool.submit(task);
+                Future<Void> submit = threadPool.submit(task);
             }
 
             return ComputeResult.SUCCESS;
