@@ -6,6 +6,8 @@ import org.junit.Assert;
 import com.lucas.ComputeEngine;
 import com.lucas.ComputeRequest;
 import com.lucas.ComputeResult;
+import com.lucas.Result;
+import com.lucas.Request;
 import com.lucas.ImpComputeEngine;
 import com.lucas.StorageToComputeEngineAPI;
 import com.lucas.StorageToComputeEngineImp;
@@ -31,7 +33,7 @@ public class ComputeEngineIntegrationTest {
 
         InMemoryOutputConfig output = new InMemoryOutputConfig();
 
-        ComputeRequest mockRequest = Mockito.mock(ComputeRequest.class);
+        Request mockRequest = Mockito.mock(Request.class);
         when(mockRequest.getInputConfig()).thenReturn(input);
         when(mockRequest.getOutputConfig()).thenReturn(output);
 
