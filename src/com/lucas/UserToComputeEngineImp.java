@@ -37,7 +37,7 @@ public class UserToComputeEngineImp implements UserToComputeEngineAPI {
     }
     private List<Integer> readInputDataFromFile(InputConfig inputConfig) {
         List<Integer> inputData = new ArrayList<>();
-        try {
+        /*try {
             BufferedReader reader = new BufferedReader(new FileReader(inputConfig.getFileName()));
             String line;
             while ((line = reader.readLine()) != null) {
@@ -47,7 +47,7 @@ public class UserToComputeEngineImp implements UserToComputeEngineAPI {
             reader.close();
         } catch (IOException e) {
             e.printStackTrace();
-        }
+        }*/
         return inputData;
     }
 }
