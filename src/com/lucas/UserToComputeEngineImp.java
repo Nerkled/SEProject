@@ -18,12 +18,11 @@ public class UserToComputeEngineImp implements UserToComputeEngineAPI {
     }
 
     //@Override
-    //Massive Change here
     public ComputeResult compute(Request request) {
         //wire this to lucas compute engine
         //wire this to datastorage to write out to output path
         List<Integer> integers = dataStore.read(request.getInputConfig());
-		dataStore.write(request.getOutputConfig(), computeEngine.compute(integers));
-		return ComputeResult.SUCCESS;
+	    dataStore.write(request.getOutputConfig(), computeEngine.compute(integers));
+    	return ComputeResult.SUCCESS;
     }
 }
