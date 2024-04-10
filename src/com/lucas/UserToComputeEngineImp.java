@@ -22,32 +22,8 @@ public class UserToComputeEngineImp implements UserToComputeEngineAPI {
     public ComputeResult compute(Request request) {
         //wire this to lucas compute engine
         //wire this to datastorage to write out to output path
-        InputConfig inputPath = request.getInputConfig();
-        char delimiter = request.getDelimiter();
-        OutputConfig outputPath = request.getOutputConfig();
-        List<Integer> inputData = readInputDataFromFile(inputPath);
-
-        // Pass inputData and other necessary parameters to compute engine
-        computeEngine.compute(inputData);
-
-        // Write the output to the specified output path using data storage
-        dataStore.write(outputPath,"Success");
-
-        return ComputeResult.SUCCESS;
-    }
-    private List<Integer> readInputDataFromFile(InputConfig inputConfig) {
-        List<Integer> inputData = new ArrayList<>();
-        /*try {
-            BufferedReader reader = new BufferedReader(new FileReader(inputConfig.getFileName()));
-            String line;
-            while ((line = reader.readLine()) != null) {
-                // Assuming each line contains an integer
-                inputData.add(Integer.parseInt(line));
-            }
-            reader.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }*/
-        return inputData;
+        List<Integer> integers = dataStore.read(request.getInputConfig());
+		dataStore.write(request.getOutputConfig(), computeEngine.compute(integers));
+		return ComputeResult.SUCCESS;
     }
 }
