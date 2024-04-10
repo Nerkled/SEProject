@@ -9,7 +9,6 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
-
 import com.lucas.ComputeEngine;
 import com.lucas.LucasComputeEngine;
 import com.lucas.StorageToComputeEngineAPI;
@@ -85,8 +84,7 @@ public class TestMultiUser {
         List<String> multiThreaded = loadAllOutput(multiThreadFilePrefix, numThreads);
         Assert.assertEquals(singleThreaded, multiThreaded); //this should check output for single and multi threaded;*/
     }
-    //commented out for checkstyle to pass
-    /* 
+
     private List<String> loadAllOutput(String prefix, int nThreads) throws IOException {
         List<String> result = new ArrayList<>();
         for (int i = 0; i < nThreads; i++) {
@@ -95,5 +93,5 @@ public class TestMultiUser {
             result.addAll(Files.readAllLines(multiThreadedOut.toPath()));
         }
         return result;
-    }*/
+    }
 }
