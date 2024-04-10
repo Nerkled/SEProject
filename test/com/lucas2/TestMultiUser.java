@@ -9,7 +9,11 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
-import com.lucas.*;
+import com.lucas.ComputeEngine;
+import com.lucas.LucasComputeEngine;
+import com.lucas.StorageToComputeEngineAPI;
+import com.lucas.StorageToComputeEngineImp;
+import com.lucas.UserToComputeEngineImp;
 import org.junit.Assert;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
