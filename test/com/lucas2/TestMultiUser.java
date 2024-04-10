@@ -19,7 +19,7 @@ public class TestMultiUser {
     // TODO 1: change the type of this variable to the name you're using for your
     // User <-> ComputeEngine API
     private UserToComputeEngineImp coordinator;
-    private StorageToComputeEngineAPI dataStorage;
+    private StorageToComputeEngineImp dataStorage;
     private ComputeEngine engine;
 
     @BeforeEach
@@ -76,9 +76,9 @@ public class TestMultiUser {
         Assert.assertEquals(singleThreaded, multiThreaded); //this should check output for single and multi threaded;
     }
 
-    private List<String> loadAllOutput(String prefix, int nThreads) throws IOException {
+    private List<String> loadAllOutput(String prefix, int numThreads) throws IOException {
         List<String> result = new ArrayList<>();
-        for (int i = 0; i < nThreads; i++) {
+        for (int i = 0; i < numThreads; i++) {
             File multiThreadedOut =
                     new File(prefix + i);
             result.addAll(Files.readAllLines(multiThreadedOut.toPath()));
