@@ -4,33 +4,26 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 
 /**
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler (version 1.59.1)",
-    comments = "Source: userToComputeProto.proto")
+@javax.annotation.Generated(value = "by gRPC proto compiler (version 1.59.1)", comments = "Source: userToComputeProto.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class DataStoreGrpc {
 
-  private DataStoreGrpc() {}
+  private DataStoreGrpc() {
+  }
 
   public static final java.lang.String SERVICE_NAME = "main.proto.DataStore";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<main.proto.UserToComputeProto.GetDataRequest,
-      main.proto.UserToComputeProto.GetDataResponse> getGetDataMethod;
+  private static volatile io.grpc.MethodDescriptor<main.proto.UserToComputeProto.GetDataRequest, main.proto.UserToComputeProto.GetDataResponse> getGetDataMethod;
 
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "getData",
-      requestType = main.proto.UserToComputeProto.GetDataRequest.class,
-      responseType = main.proto.UserToComputeProto.GetDataResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<main.proto.UserToComputeProto.GetDataRequest,
-      main.proto.UserToComputeProto.GetDataResponse> getGetDataMethod() {
+  @io.grpc.stub.annotations.RpcMethod(fullMethodName = SERVICE_NAME + '/'
+      + "getData", requestType = main.proto.UserToComputeProto.GetDataRequest.class, responseType = main.proto.UserToComputeProto.GetDataResponse.class, methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<main.proto.UserToComputeProto.GetDataRequest, main.proto.UserToComputeProto.GetDataResponse> getGetDataMethod() {
     io.grpc.MethodDescriptor<main.proto.UserToComputeProto.GetDataRequest, main.proto.UserToComputeProto.GetDataResponse> getGetDataMethod;
     if ((getGetDataMethod = DataStoreGrpc.getGetDataMethod) == null) {
       synchronized (DataStoreGrpc.class) {
         if ((getGetDataMethod = DataStoreGrpc.getGetDataMethod) == null) {
-          DataStoreGrpc.getGetDataMethod = getGetDataMethod =
-              io.grpc.MethodDescriptor.<main.proto.UserToComputeProto.GetDataRequest, main.proto.UserToComputeProto.GetDataResponse>newBuilder()
+          DataStoreGrpc.getGetDataMethod = getGetDataMethod = io.grpc.MethodDescriptor.<main.proto.UserToComputeProto.GetDataRequest, main.proto.UserToComputeProto.GetDataResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "getData"))
               .setSampledToLocalTracing(true)
@@ -46,22 +39,16 @@ public final class DataStoreGrpc {
     return getGetDataMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<main.proto.UserToComputeProto.StoreDataRequest,
-      main.proto.UserToComputeProto.StoreDataResponse> getStoreDataMethod;
+  private static volatile io.grpc.MethodDescriptor<main.proto.UserToComputeProto.StoreDataRequest, main.proto.UserToComputeProto.StoreDataResponse> getStoreDataMethod;
 
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "storeData",
-      requestType = main.proto.UserToComputeProto.StoreDataRequest.class,
-      responseType = main.proto.UserToComputeProto.StoreDataResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<main.proto.UserToComputeProto.StoreDataRequest,
-      main.proto.UserToComputeProto.StoreDataResponse> getStoreDataMethod() {
+  @io.grpc.stub.annotations.RpcMethod(fullMethodName = SERVICE_NAME + '/'
+      + "storeData", requestType = main.proto.UserToComputeProto.StoreDataRequest.class, responseType = main.proto.UserToComputeProto.StoreDataResponse.class, methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<main.proto.UserToComputeProto.StoreDataRequest, main.proto.UserToComputeProto.StoreDataResponse> getStoreDataMethod() {
     io.grpc.MethodDescriptor<main.proto.UserToComputeProto.StoreDataRequest, main.proto.UserToComputeProto.StoreDataResponse> getStoreDataMethod;
     if ((getStoreDataMethod = DataStoreGrpc.getStoreDataMethod) == null) {
       synchronized (DataStoreGrpc.class) {
         if ((getStoreDataMethod = DataStoreGrpc.getStoreDataMethod) == null) {
-          DataStoreGrpc.getStoreDataMethod = getStoreDataMethod =
-              io.grpc.MethodDescriptor.<main.proto.UserToComputeProto.StoreDataRequest, main.proto.UserToComputeProto.StoreDataResponse>newBuilder()
+          DataStoreGrpc.getStoreDataMethod = getStoreDataMethod = io.grpc.MethodDescriptor.<main.proto.UserToComputeProto.StoreDataRequest, main.proto.UserToComputeProto.StoreDataResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "storeData"))
               .setSampledToLocalTracing(true)
@@ -81,43 +68,42 @@ public final class DataStoreGrpc {
    * Creates a new async stub that supports all call types for the service
    */
   public static DataStoreStub newStub(io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<DataStoreStub> factory =
-      new io.grpc.stub.AbstractStub.StubFactory<DataStoreStub>() {
-        @java.lang.Override
-        public DataStoreStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-          return new DataStoreStub(channel, callOptions);
-        }
-      };
+    io.grpc.stub.AbstractStub.StubFactory<DataStoreStub> factory = new io.grpc.stub.AbstractStub.StubFactory<DataStoreStub>() {
+      @java.lang.Override
+      public DataStoreStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+        return new DataStoreStub(channel, callOptions);
+      }
+    };
     return DataStoreStub.newStub(factory, channel);
   }
 
   /**
-   * Creates a new blocking-style stub that supports unary and streaming output calls on the service
+   * Creates a new blocking-style stub that supports unary and streaming output
+   * calls on the service
    */
   public static DataStoreBlockingStub newBlockingStub(
       io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<DataStoreBlockingStub> factory =
-      new io.grpc.stub.AbstractStub.StubFactory<DataStoreBlockingStub>() {
-        @java.lang.Override
-        public DataStoreBlockingStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-          return new DataStoreBlockingStub(channel, callOptions);
-        }
-      };
+    io.grpc.stub.AbstractStub.StubFactory<DataStoreBlockingStub> factory = new io.grpc.stub.AbstractStub.StubFactory<DataStoreBlockingStub>() {
+      @java.lang.Override
+      public DataStoreBlockingStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+        return new DataStoreBlockingStub(channel, callOptions);
+      }
+    };
     return DataStoreBlockingStub.newStub(factory, channel);
   }
 
   /**
-   * Creates a new ListenableFuture-style stub that supports unary calls on the service
+   * Creates a new ListenableFuture-style stub that supports unary calls on the
+   * service
    */
   public static DataStoreFutureStub newFutureStub(
       io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<DataStoreFutureStub> factory =
-      new io.grpc.stub.AbstractStub.StubFactory<DataStoreFutureStub>() {
-        @java.lang.Override
-        public DataStoreFutureStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-          return new DataStoreFutureStub(channel, callOptions);
-        }
-      };
+    io.grpc.stub.AbstractStub.StubFactory<DataStoreFutureStub> factory = new io.grpc.stub.AbstractStub.StubFactory<DataStoreFutureStub>() {
+      @java.lang.Override
+      public DataStoreFutureStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+        return new DataStoreFutureStub(channel, callOptions);
+      }
+    };
     return DataStoreFutureStub.newStub(factory, channel);
   }
 
@@ -146,7 +132,8 @@ public final class DataStoreGrpc {
   public static abstract class DataStoreImplBase
       implements io.grpc.BindableService, AsyncService {
 
-    @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
+    @java.lang.Override
+    public final io.grpc.ServerServiceDefinition bindService() {
       return DataStoreGrpc.bindService(this);
     }
   }
@@ -209,14 +196,16 @@ public final class DataStoreGrpc {
 
     /**
      */
-    public main.proto.UserToComputeProto.StoreDataResponse storeData(main.proto.UserToComputeProto.StoreDataRequest request) {
+    public main.proto.UserToComputeProto.StoreDataResponse storeData(
+        main.proto.UserToComputeProto.StoreDataRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getStoreDataMethod(), getCallOptions(), request);
     }
   }
 
   /**
-   * A stub to allow clients to do ListenableFuture-style rpc calls to service DataStore.
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service
+   * DataStore.
    */
   public static final class DataStoreFutureStub
       extends io.grpc.stub.AbstractFutureStub<DataStoreFutureStub> {
@@ -295,25 +284,22 @@ public final class DataStoreGrpc {
   public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
     return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
         .addMethod(
-          getGetDataMethod(),
-          io.grpc.stub.ServerCalls.asyncUnaryCall(
-            new MethodHandlers<
-              main.proto.UserToComputeProto.GetDataRequest,
-              main.proto.UserToComputeProto.GetDataResponse>(
-                service, METHODID_GET_DATA)))
+            getGetDataMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<main.proto.UserToComputeProto.GetDataRequest, main.proto.UserToComputeProto.GetDataResponse>(
+                    service, METHODID_GET_DATA)))
         .addMethod(
-          getStoreDataMethod(),
-          io.grpc.stub.ServerCalls.asyncUnaryCall(
-            new MethodHandlers<
-              main.proto.UserToComputeProto.StoreDataRequest,
-              main.proto.UserToComputeProto.StoreDataResponse>(
-                service, METHODID_STORE_DATA)))
+            getStoreDataMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<main.proto.UserToComputeProto.StoreDataRequest, main.proto.UserToComputeProto.StoreDataResponse>(
+                    service, METHODID_STORE_DATA)))
         .build();
   }
 
   private static abstract class DataStoreBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoFileDescriptorSupplier, io.grpc.protobuf.ProtoServiceDescriptorSupplier {
-    DataStoreBaseDescriptorSupplier() {}
+    DataStoreBaseDescriptorSupplier() {
+    }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
@@ -328,7 +314,8 @@ public final class DataStoreGrpc {
 
   private static final class DataStoreFileDescriptorSupplier
       extends DataStoreBaseDescriptorSupplier {
-    DataStoreFileDescriptorSupplier() {}
+    DataStoreFileDescriptorSupplier() {
+    }
   }
 
   private static final class DataStoreMethodDescriptorSupplier
