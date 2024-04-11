@@ -3,7 +3,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 @javax.annotation.Generated(value = "by gRPC proto compiler (version 1.59.1)",
   comments = "Source: userToComputeProto.proto")
 @io.grpc.stub.annotations.GrpcGenerated
-@SuppressWarnings("checkstyle: all")
+@SuppressWarnings("checkstyle: IndentationCheck")
 public final class DataStoreGrpc {
 
     public static final java.lang.String SERVICE_NAME = "main.proto.DataStore";
