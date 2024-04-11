@@ -1,7 +1,7 @@
 package com.lucas;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
-import main.proto.*;
+import main.proto.DataStoreGrpc;
 import main.proto.UserToComputeProto.*;
 
 public class StorageClient {
