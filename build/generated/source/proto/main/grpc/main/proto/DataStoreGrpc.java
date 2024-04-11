@@ -2,6 +2,7 @@ package main.proto;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
 
+
 @javax.annotation.Generated(value = "by gRPC proto compiler (version 1.59.1)",
     comments = "Source: userToComputeProto.proto")
 @io.grpc.stub.annotations.GrpcGenerated
