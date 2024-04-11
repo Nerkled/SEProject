@@ -1,16 +1,10 @@
 package main.proto;
-
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-@SuppressWarnings("checkstyle:all")
-
-
 @javax.annotation.Generated(value = "by gRPC proto compiler (version 1.59.1)",
-        comments = "Source: userToComputeProto.proto")
+  comments = "Source: userToComputeProto.proto")
 @io.grpc.stub.annotations.GrpcGenerated
+@SuppressWarnings("checkstyle")
 public final class DataStoreGrpc {
-
-    private DataStoreGrpc() {
-    }
 
     public static final java.lang.String SERVICE_NAME = "main.proto.DataStore";
 
