@@ -6,7 +6,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 @javax.annotation.Generated(value = "by gRPC proto compiler (version 1.59.1)",
         comments = "Source: userToComputeProto.proto")
 @io.grpc.stub.annotations.GrpcGenerated
-@SuppressWarnings("chekstyle:all")
+@SuppressWarnings("checkstyle:all")
 public final class DataStoreGrpc {
 
     private DataStoreGrpc() {
