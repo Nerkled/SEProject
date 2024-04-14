@@ -8,11 +8,11 @@ service DataStore {
 }
 
 message GetDataRequest {
-  int32 n = 1;
+  string value = 1;
 }
 
 message GetDataResponse {
-  int32 result = 1;
+  string value = 1;
 }
 
 message StoreDataRequest {
