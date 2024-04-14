@@ -1,58 +1,51 @@
 package com.lucas2;
+
+import org.junit.jupiter.api.Test;
+import java.util.ArrayList;
+import java.util.List;
 import com.lucas.ComputeEngine;
 import com.lucas.LucasComputeEngine;
 import main.proto.UserToComputeProto;
 import main.proto.DataStoreGrpc;
+import main.proto.UserToComputeProto.GetDataRequest;
+import main.proto.UserToComputeProto.GetDataResponse;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
+import org.junit.Assert;
 
 public class TestDataStore {
-    private ComputeEngine computeEngine;
-    private DataStoreGrpc.DataStoreBlockingStub dataStoreStub;
-
-    @BeforeEach
-    public void setup() {
-        String host = "localhost";
-        int port = 8080;
-        this.computeEngine = new LucasComputeEngine(host, port);
-        ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 8080)
-                .usePlaintext()
-                .build();
-        this.dataStoreStub = DataStoreGrpc.newBlockingStub(channel);
-    }
-
-        @Test
-        public void testGetData() {
-        UserToComputeProto.GetDataRequest request = UserToComputeProto.GetDataRequest.newBuilder()
-            .setKey("testKey")
-            .build();
-
-        UserToComputeProto.GetDataResponse expectedResponse = UserToComputeProto.GetDataResponse.newBuilder()
-            .setData("testData")
-            .build();
-
-        UserToComputeProto.GetDataResponse actualResponse = computeEngine.getData(request, dataStoreStub);
-
-        assertEquals(expectedResponse, actualResponse);
-        }
 
     @Test
-    public void testStoreData() {
-        UserToComputeProto.StoreDataRequest request = UserToComputeProto.StoreDataRequest.newBuilder()
-                .setKey("testKey")
-                .setData("testData")
-                .build();
+    public void smokeTestCompute() {
+        // The computation component has very simple inputs/outputs and no dependencies, so we can
+        // write a smoke test with no mocks at all
+        List<Integer> values = new ArrayList<>();
+        values.add(1);
+        ComputeEngine engine = new LucasComputeEngine(null, 0);
 
-        UserToComputeProto.StoreDataResponse expectedResponse = UserToComputeProto.StoreDataResponse.newBuilder()
-                .setResult(true)
-                .build();
+        Assert.assertEquals("The result is: [1]", engine.compute(values));
+    }
 
-        UserToComputeProto.StoreDataResponse actualResponse = computeEngine.putData(request, dataStoreStub);
+    @Test
+    public void testComputeWithProto() {
+        // Create a mock data store
+        TestDataStore dataStore = new TestDataStore();
 
-        assertEquals(expectedResponse, actualResponse);
+        // Create a mock gRPC channel
+        ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 8080).usePlaintext().build();
+
+        // Create a gRPC client stub
+        DataStoreGrpc.DataStoreBlockingStub stub = DataStoreGrpc.newBlockingStub(channel);
+
+        // Create a request using the proto generated file
+        GetDataRequest request = GetDataRequest.newBuilder()
+            .setValue("testValue")
+            .build();
+
+        // Make a gRPC call to the data store
+        UserToComputeProto.GetDataResponse response = stub.getData(request);
+
+        // Verify the response
+        Assert.assertEquals("testData", response.getValue()); // Adjust assertion according to your response structure
     }
 }

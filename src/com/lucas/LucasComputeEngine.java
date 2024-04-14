@@ -7,9 +7,9 @@ import main.proto.UserToComputeProto.GetDataRequest;
 import main.proto.UserToComputeProto.GetDataResponse;
 import main.proto.UserToComputeProto.StoreDataRequest;
 import main.proto.DataStoreGrpc;
+import main.proto.DataStoreGrpc.DataStoreBlockingStub;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
-import java.util.concurrent.TimeUnit;
 
 public class LucasComputeEngine implements ComputeEngine {
     private final ManagedChannel channel;
@@ -28,17 +28,11 @@ public class LucasComputeEngine implements ComputeEngine {
     }
 
     @Override
-    public void putData(int key, String value) {
-        StoreDataRequest request = StoreDataRequest.newBuilder().setKey(String.valueOf(key)).setValue(value).build();
+    public void putData(StoreDataRequest request, DataStoreBlockingStub dataStoreStub) {
         UserToComputeProto.StoreDataResponse response = blockingStub.storeData(request);
         if (!response.getSuccess()) {
             throw new RuntimeException("Failed to store data");
         }
-    }
-
-    @Override
-    public void shutdown() throws InterruptedException {
-        channel.shutdown().awaitTermination(5, TimeUnit.SECONDS);
     }
 
     @Override
@@ -74,5 +68,10 @@ public class LucasComputeEngine implements ComputeEngine {
             return 1;
         }
         return lucas(n - 1) + lucas(n - 2);
+    }
+
+    @Override
+    public void shutdown() throws InterruptedException {
+        throw new UnsupportedOperationException("Unimplemented method 'shutdown'");
     }
 }

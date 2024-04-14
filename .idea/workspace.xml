@@ -5,13 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8bb16ab4-f244-485a-a7a2-71df3b97c7a9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/test/com/lucas2/TestDataStore.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proto/userToComputeProto.proto" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/lucas/ComputeEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/lucas/ComputeEngine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/lucas/ImpComputeEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/lucas/ImpComputeEngine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/lucas/ImpComputeEngine.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/lucas/LucasComputeEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/lucas/LucasComputeEngine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/proto/userToComputeProto.proto" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/proto/userToComputeProto.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/com/lucas2/ComputeEngineIntegrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/com/lucas2/ComputeEngineIntegrationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/com/lucas2/ComputeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/com/lucas2/ComputeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/com/lucas2/TestDataStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/com/lucas2/TestDataStore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/com/lucas2/TestMultiUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/com/lucas2/TestMultiUser.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,6 +112,10 @@
       <updated>1712075846620</updated>
     </task>
     <servers />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="dependencySupport" implementationName="java:com.google.protobuf:protobuf-java" />
+    <option featureType="dependencySupport" implementationName="java:io.grpc:grpc-api" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
