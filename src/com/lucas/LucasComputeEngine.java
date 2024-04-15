@@ -1,11 +1,12 @@
 package com.lucas;
 import java.util.List;
+
+import main.proto.DataStoreGrpc;
+import main.proto.DataStoreGrpc.DataStoreBlockingStub;
 import main.proto.UserToComputeProto;
 import main.proto.UserToComputeProto.GetDataRequest;
 import main.proto.UserToComputeProto.GetDataResponse;
 import main.proto.UserToComputeProto.StoreDataRequest;
-import main.proto.DataStoreGrpc;
-import main.proto.DataStoreGrpc.DataStoreBlockingStub;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 

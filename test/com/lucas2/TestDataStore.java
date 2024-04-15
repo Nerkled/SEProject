@@ -4,8 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 import com.lucas.ComputeEngine;
 import com.lucas.LucasComputeEngine;
-import main.proto.UserToComputeProto;
+
 import main.proto.DataStoreGrpc;
+import main.proto.UserToComputeProto;
 import main.proto.UserToComputeProto.GetDataRequest;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;

@@ -2,8 +2,6 @@ package com.lucas;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import main.proto.DataStoreGrpc;
-//checkstyle warned against using wildcard imports, so I changed it to import only the necessary classes
-// -Robert Bonet
 import main.proto.UserToComputeProto.GetDataRequest;
 import main.proto.UserToComputeProto.GetDataResponse;
 import main.proto.UserToComputeProto.StoreDataRequest;
