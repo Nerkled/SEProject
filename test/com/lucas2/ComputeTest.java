@@ -16,9 +16,9 @@ public class ComputeTest {
         // write a smoke test with no mocks at all
         List<Integer> values = new ArrayList<>();
         values.add(1);
-        ComputeEngine engine = new LucasComputeEngine(null, 0);
+        ComputeEngine engine = new LucasComputeEngine("localhost", 0);
 
-        Assert.assertEquals("The result is: [1]", engine.compute(values));
+        Assert.assertEquals( "2 1", engine.compute(values));
 
     }
 }

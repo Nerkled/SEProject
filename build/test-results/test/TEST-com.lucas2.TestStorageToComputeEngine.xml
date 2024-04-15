@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.lucas2.TestStorageToComputeEngine" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-04-11T03:00:59" hostname="LAPTOP-E6JH709M" time="0.113">
+<testsuite name="com.lucas2.TestStorageToComputeEngine" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-04-15T19:07:56" hostname="LAPTOP-E6JH709M" time="0.247">
   <properties/>
-  <testcase name="smokeTestWrite()" classname="com.lucas2.TestStorageToComputeEngine" time="0.089"/>
-  <testcase name="smokeTestRead()" classname="com.lucas2.TestStorageToComputeEngine" time="0.023"/>
+  <testcase name="smokeTestWrite()" classname="com.lucas2.TestStorageToComputeEngine" time="0.191"/>
+  <testcase name="smokeTestRead()" classname="com.lucas2.TestStorageToComputeEngine" time="0.052"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

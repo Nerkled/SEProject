@@ -26,9 +26,9 @@ public class StorageClient {
     }
 
     public int getData(int n) {
-        GetDataRequest request = GetDataRequest.newBuilder().setN(n).build();
+        GetDataRequest request = GetDataRequest.newBuilder().setKey(n).build();
         GetDataResponse response = blockingStub.getData(request);
-        return response.getResult();
+        return response.getValue();
     }
 
     public boolean storeData(String key, String value) {

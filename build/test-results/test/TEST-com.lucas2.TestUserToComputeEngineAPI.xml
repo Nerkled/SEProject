@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.lucas2.TestUserToComputeEngineAPI" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-04-11T03:00:59" hostname="LAPTOP-E6JH709M" time="0.05">
+<testsuite name="com.lucas2.TestUserToComputeEngineAPI" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-04-15T19:07:56" hostname="LAPTOP-E6JH709M" time="0.122">
   <properties/>
-  <testcase name="smokeTest()" classname="com.lucas2.TestUserToComputeEngineAPI" time="0.045"/>
-  <testcase name="testCompute()" classname="com.lucas2.TestUserToComputeEngineAPI" time="0.004"/>
+  <testcase name="smokeTest()" classname="com.lucas2.TestUserToComputeEngineAPI" time="0.112"/>
+  <testcase name="testCompute()" classname="com.lucas2.TestUserToComputeEngineAPI" time="0.008"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

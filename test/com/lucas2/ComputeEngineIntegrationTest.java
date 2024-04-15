@@ -22,7 +22,7 @@ public class ComputeEngineIntegrationTest {
     @Test
     public void testComputeEngineIntegration() {
         // Set up input values for the test
-        ComputeEngine engine = new LucasComputeEngine(null,0);
+        ComputeEngine engine = new LucasComputeEngine("localhost",0);
 
         //TestStorageToComputeEngine testStorage = new TestStorageToComputeEngine();
         StorageToComputeEngineAPI dataStorage = new StorageToComputeEngineImp();

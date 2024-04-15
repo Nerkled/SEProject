@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.lucas2.ComputeEngineIntegrationTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-04-11T03:00:58" hostname="LAPTOP-E6JH709M" time="0.908">
+<testsuite name="com.lucas2.ComputeEngineIntegrationTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-04-15T19:07:54" hostname="LAPTOP-E6JH709M" time="1.817">
   <properties/>
-  <testcase name="testComputeEngineIntegration()" classname="com.lucas2.ComputeEngineIntegrationTest" time="0.908"/>
+  <testcase name="testComputeEngineIntegration()" classname="com.lucas2.ComputeEngineIntegrationTest" time="1.817"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

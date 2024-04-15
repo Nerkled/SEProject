@@ -22,9 +22,9 @@ public class TestDataStore {
         // write a smoke test with no mocks at all
         List<Integer> values = new ArrayList<>();
         values.add(1);
-        ComputeEngine engine = new LucasComputeEngine(null, 0);
+        ComputeEngine engine = new LucasComputeEngine("localhost", 0);
 
-        Assert.assertEquals("The result is: [1]", engine.compute(values));
+        Assert.assertEquals("2 1", engine.compute(values));
     }
 
     @Test
@@ -40,7 +40,7 @@ public class TestDataStore {
 
         // Create a request using the proto generated file
         GetDataRequest request = GetDataRequest.newBuilder()
-            .setValue("testValue")
+            .setKey(1)
             .build();
 
         // Make a gRPC call to the data store

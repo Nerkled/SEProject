@@ -2,17 +2,29 @@ syntax = "proto3";
 
 package main.proto;
 
-service DataStore {
+service LucasComputeEngine {
+  rpc compute(ComputeRequest) returns (ComputeResponse);
+}
+
+service StorageEngine {
   rpc getData(GetDataRequest) returns (GetDataResponse);
   rpc storeData(StoreDataRequest) returns (StoreDataResponse);
 }
 
+message ComputeRequest {
+  int32 n = 1;
+}
+
+message ComputeResponse {
+  string result = 1;
+}
+
 message GetDataRequest {
-  string value = 1;
+  int32 key = 1;
 }
 
 message GetDataResponse {
-  string value = 1;
+  int32 value = 1;
 }
 
 message StoreDataRequest {
