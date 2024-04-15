@@ -1,7 +1,5 @@
 package com.lucas;
-
 import java.util.List;
-
 import main.proto.UserToComputeProto;
 import main.proto.UserToComputeProto.GetDataRequest;
 import main.proto.UserToComputeProto.GetDataResponse;
