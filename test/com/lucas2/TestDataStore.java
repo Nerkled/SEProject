@@ -1,17 +1,19 @@
 package com.lucas2;
-
 import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import java.util.List;
 import com.lucas.ComputeEngine;
 import com.lucas.LucasComputeEngine;
 import main.proto.UserToComputeProto;
+import main.proto.UserToComputeProto.GetDataRequest.Builder;
 import main.proto.DataStoreGrpc;
 import main.proto.UserToComputeProto.GetDataRequest;
 import main.proto.UserToComputeProto.GetDataResponse;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import org.junit.Assert;
+
+
 
 public class TestDataStore {
 
@@ -39,13 +41,13 @@ public class TestDataStore {
 
         // Create a request using the proto generated file
         GetDataRequest request = GetDataRequest.newBuilder()
-            .setValue("testValue")
+            .setValue("testValue") // Update the field name to match your proto definition
             .build();
 
         // Make a gRPC call to the data store
         UserToComputeProto.GetDataResponse response = stub.getData(request);
 
         // Verify the response
-        Assert.assertEquals("testValue", response.getValue()); // Adjust assertion according to your response structure
+        Assert.assertEquals("testValue", response.getValue()); // Update the field name to match your proto definition
     }
 }
