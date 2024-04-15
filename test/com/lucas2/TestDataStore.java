@@ -46,6 +46,6 @@ public class TestDataStore {
         UserToComputeProto.GetDataResponse response = stub.getData(request);
 
         // Verify the response
-        Assert.assertEquals("testData", response.getValue()); // Adjust assertion according to your response structure
+        Assert.assertEquals("testValue", response.getValue()); // Adjust assertion according to your response structure
     }
 }
