@@ -39,7 +39,7 @@ public class TestMultiUser {
         // that the user will make requests to
         // Store it in the 'coordinator' instance variable
         dataStorage = new DataStorageFiles();
-        engine = new LucasComputeEngine(); //make it imp of this
+        engine = new LucasComputeEngine("localhost", 0);
         coordinator = new UserToComputeEngineImp(dataStorage, engine);
 
     }
