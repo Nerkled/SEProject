@@ -21,9 +21,9 @@ public class LucasComputeEngine implements ComputeEngine {
 
     @Override
     public int getData(int key) {
-        GetDataRequest request = GetDataRequest.newBuilder().setKey(key).build();
+        GetDataRequest request = GetDataRequest.newBuilder().setN(key).build();
         GetDataResponse response = blockingStub.getData(request);
-        return response.getValue();
+        return response.getResult();
     }
 
     @Override
