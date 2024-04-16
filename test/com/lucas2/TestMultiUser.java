@@ -10,9 +10,11 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
 import com.lucas.ComputeEngine;
+import com.lucas.DataStorageFiles;
 import com.lucas.LucasComputeEngine;
 import com.lucas.StorageToComputeEngineAPI;
 import com.lucas.StorageToComputeEngineImp;
+import com.lucas.UserToComputeEngineAPI;
 import com.lucas.UserToComputeEngineImp;
 
 import org.junit.Assert;
@@ -24,7 +26,7 @@ public class TestMultiUser {
 
     // TODO 1: change the type of this variable to the name you're using for your
     // User <-> ComputeEngine API
-    private UserToComputeEngineImp coordinator;
+    private UserToComputeEngineAPI coordinator;
     private StorageToComputeEngineAPI dataStorage;
     private ComputeEngine engine;
 
@@ -34,7 +36,7 @@ public class TestMultiUser {
         // component
         // that the user will make requests to
         // Store it in the 'coordinator' instance variable
-        dataStorage = new StorageToComputeEngineImp();
+        dataStorage = new DataStorageFiles();
         engine = new LucasComputeEngine(); //make it imp of this
         coordinator = new UserToComputeEngineImp(dataStorage, engine);
 
@@ -77,12 +79,12 @@ public class TestMultiUser {
         });
 
         // Check that the output is the same for multi-threaded and single-threaded
-        /* Currently this is commented out so i can pass the test to upload this to github. I'm working on a fix right now
+       
 
 
         List<String> singleThreaded = loadAllOutput(singleThreadFilePrefix, numThreads);
         List<String> multiThreaded = loadAllOutput(multiThreadFilePrefix, numThreads);
-        Assert.assertEquals(singleThreaded, multiThreaded); //this should check output for single and multi threaded;*/
+        Assert.assertEquals(singleThreaded, multiThreaded); //this should check output for single and multi threaded;
     }
 
     private List<String> loadAllOutput(String prefix, int numThreads) throws IOException {
