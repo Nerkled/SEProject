@@ -1,7 +1,6 @@
 package com.lucas2;
 import org.junit.jupiter.api.Test;
-import java.util.ArrayList;
-import java.util.List;
+import org.junit.*;
 import com.lucas.ComputeEngine;
 import com.lucas.LucasComputeEngine;
 
@@ -11,6 +10,9 @@ import main.proto.UserToComputeProto.GetDataRequest;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import org.junit.Assert;
+import java.util.ArrayList;
+import java.util.List;
+
 
 
 
