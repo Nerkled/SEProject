@@ -2,42 +2,17 @@ syntax = "proto3";
 
 package main.proto;
 
-<<<<<<< HEAD
-service LucasComputeEngine {
-  rpc compute(ComputeRequest) returns (ComputeResponse);
-}
-
-service StorageEngine {
-=======
 service DataStore {
->>>>>>> bcc4ee233adb46f5db9d19dc3d35033eb7cc3cda
   rpc getData(GetDataRequest) returns (GetDataResponse);
   rpc storeData(StoreDataRequest) returns (StoreDataResponse);
 }
 
-<<<<<<< HEAD
-message ComputeRequest {
-  int32 n = 1;
-}
-
-message ComputeResponse {
-  string result = 1;
-}
-
-message GetDataRequest {
-  int32 key = 1;
-}
-
-message GetDataResponse {
-  int32 value = 1;
-=======
 message GetDataRequest {
   int32 n = 1;
 }
 
 message GetDataResponse {
   int32 result = 1;
->>>>>>> bcc4ee233adb46f5db9d19dc3d35033eb7cc3cda
 }
 
 message StoreDataRequest {
@@ -47,8 +22,4 @@ message StoreDataRequest {
 
 message StoreDataResponse {
   bool success = 1;
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> bcc4ee233adb46f5db9d19dc3d35033eb7cc3cda

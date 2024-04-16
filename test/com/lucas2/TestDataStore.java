@@ -40,13 +40,13 @@ public class TestDataStore {
 
         // Create a request using the proto generated file
         GetDataRequest request = GetDataRequest.newBuilder()
-            .setKey(1)
+            .setN(1)
             .build();
 
         // Make a gRPC call to the data store
         UserToComputeProto.GetDataResponse response = stub.getData(request);
 
         // Verify the response
-        Assert.assertEquals("testValue", response.getValue()); // Update the field name to match your proto definition
+        Assert.assertEquals("testValue", response.getResult()); // Update the field name to match your proto definition
     }
 }
