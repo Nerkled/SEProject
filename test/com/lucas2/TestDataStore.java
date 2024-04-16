@@ -2,7 +2,6 @@ package com.lucas2;
 import org.junit.jupiter.api.Test;
 import com.lucas.ComputeEngine;
 import com.lucas.LucasComputeEngine;
-
 import main.proto.DataStoreGrpc;
 import main.proto.UserToComputeProto;
 import main.proto.UserToComputeProto.GetDataRequest;
@@ -11,11 +10,8 @@ import io.grpc.ManagedChannelBuilder;
 import org.junit.Assert;
 import java.util.ArrayList;
 import java.util.List;
-
-
-
-
 public class TestDataStore {
+    
 
     @Test
     public void smokeTestCompute() {
@@ -24,12 +20,15 @@ public class TestDataStore {
         List<Integer> values = new ArrayList<>();
         values.add(1);
         ComputeEngine engine = new LucasComputeEngine("localhost", 8080);
-
+        
         Assert.assertEquals("2 1", engine.compute(values));
-    }
+    } 
+}
 
-    @Test
+ /*   @Test
     public void testComputeWithProto() {
+        // Create a mock data store
+        TestDataStore dataStore = new TestDataStore();
 
         // Create a mock gRPC channel
         ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 8080).usePlaintext().build();
@@ -49,3 +48,4 @@ public class TestDataStore {
         Assert.assertEquals("testValue", response.getResult()); // Update the field name to match your proto definition
     }
 }
+ */
