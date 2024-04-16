@@ -2,6 +2,11 @@ package com.lucas;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import main.proto.DataStoreGrpc;
+<<<<<<< HEAD
+=======
+//checkstyle warned against using wildcard imports, so I changed it to import only the necessary classes
+// -Robert Bonet
+>>>>>>> bcc4ee233adb46f5db9d19dc3d35033eb7cc3cda
 import main.proto.UserToComputeProto.GetDataRequest;
 import main.proto.UserToComputeProto.GetDataResponse;
 import main.proto.UserToComputeProto.StoreDataRequest;
@@ -26,9 +31,15 @@ public class StorageClient {
     }
 
     public int getData(int n) {
+<<<<<<< HEAD
         GetDataRequest request = GetDataRequest.newBuilder().setKey(n).build();
         GetDataResponse response = blockingStub.getData(request);
         return response.getValue();
+=======
+        GetDataRequest request = GetDataRequest.newBuilder().setN(n).build();
+        GetDataResponse response = blockingStub.getData(request);
+        return response.getResult();
+>>>>>>> bcc4ee233adb46f5db9d19dc3d35033eb7cc3cda
     }
 
     public boolean storeData(String key, String value) {

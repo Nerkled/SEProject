@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <testsuite name="com.lucas2.TestMultiUser" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-04-15T22:25:11" hostname="LAPTOP-E6JH709M" time="0.367">
   <properties/>
   <testcase name="compareMultiAndSingleThreaded()" classname="com.lucas2.TestMultiUser" time="0.367"/>
@@ -187,4 +188,11 @@ java.lang.RuntimeException: ManagedChannel allocation site
 	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 
 ]]></system-err>
+=======
+<testsuite name="com.lucas2.TestMultiUser" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-04-11T03:00:59" hostname="LAPTOP-E6JH709M" time="0.021">
+  <properties/>
+  <testcase name="compareMultiAndSingleThreaded()" classname="com.lucas2.TestMultiUser" time="0.021"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+>>>>>>> bcc4ee233adb46f5db9d19dc3d35033eb7cc3cda
 </testsuite>
