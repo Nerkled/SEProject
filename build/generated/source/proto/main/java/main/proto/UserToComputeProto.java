@@ -3,7 +3,7 @@
 
 // Protobuf Java Version: 3.25.2
 package main.proto;
-
+@SuppressWarnings("checkstyle:all")
 public final class UserToComputeProto {
   private UserToComputeProto() {}
   public static void registerAllExtensions(

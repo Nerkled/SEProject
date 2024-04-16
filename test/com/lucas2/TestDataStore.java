@@ -1,6 +1,5 @@
 package com.lucas2;
 import org.junit.jupiter.api.Test;
-import org.junit.*;
 import com.lucas.ComputeEngine;
 import com.lucas.LucasComputeEngine;
 
