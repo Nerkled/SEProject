@@ -30,8 +30,6 @@ public class TestDataStore {
 
     @Test
     public void testComputeWithProto() {
-        // Create a mock data store
-        TestDataStore dataStore = new TestDataStore();
 
         // Create a mock gRPC channel
         ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 8080).usePlaintext().build();
