@@ -9,12 +9,6 @@ import java.util.Scanner;
 //import com.lucas2.InMemoryInputConfig;
 
 public class DataStorageFiles implements StorageToComputeEngineAPI {
-
-    private String filePath;
-
-    public DataStorageFiles(String filePath) {
-        this.filePath = filePath;
-    }
     
     public List<Integer> read(InputConfig input) {
         List<Integer> list = new ArrayList<>();
@@ -44,19 +38,26 @@ public class DataStorageFiles implements StorageToComputeEngineAPI {
 
     @Override
     public Result write(OutputConfig output, String result) {
-        try (FileWriter fileWriter = new FileWriter(filePath)) {
-            String[] numbers = result.split("\n");
-            for (String number : numbers) {
-                fileWriter.write(number + "\n");
+        List<Result> resultList = new ArrayList<>();
+        OutputConfig.visitOutputConfig(output, new OutputConfig.OutputConfigVisitor() {
+            @Override
+            public void visitFile(FileOutputConfig fileOutputConfig) {
+                String filePath = fileOutputConfig.getFileName();
+                try (FileWriter fileWriter = new FileWriter(filePath)) {
+                    String[] numbers = result.split("\n");
+                    for (String number : numbers) {
+                        fileWriter.write(number + "\n");
+                    }
+                    resultList.add(() -> Result.ResultStatus.SUCCESS);
+                    System.out.println("Write operation successful!");
+                } catch (IOException e) {
+                    resultList.add(() -> Result.ResultStatus.FAILURE);
+                    System.err.println("Error writing to file: " + filePath);
+                    e.printStackTrace();
+                }
             }
-            System.out.println("Write operation successful!");
-            return () -> Result.ResultStatus.SUCCESS;
-        } catch (IOException e) {
-            System.err.println("Error writing to file: " + filePath);
-            e.printStackTrace();
-            return () -> Result.ResultStatus.FAILURE;
-        }
-
+        });
+        return resultList.get(0);
     }
 }
 
