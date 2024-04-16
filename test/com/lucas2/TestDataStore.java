@@ -23,7 +23,7 @@ public class TestDataStore {
         // write a smoke test with no mocks at all
         List<Integer> values = new ArrayList<>();
         values.add(1);
-        ComputeEngine engine = new LucasComputeEngine("localhost", 0);
+        ComputeEngine engine = new LucasComputeEngine("localhost", 8080);
 
         Assert.assertEquals("2 1", engine.compute(values));
     }
