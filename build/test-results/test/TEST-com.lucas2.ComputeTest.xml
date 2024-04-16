@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
+<testsuite name="com.lucas2.ComputeTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-04-15T22:24:58" hostname="LAPTOP-E6JH709M" time="1.185">
+  <properties/>
+  <testcase name="smokeTestCompute()" classname="com.lucas2.ComputeTest" time="1.185"/>
+=======
+<testsuite name="com.lucas2.ComputeTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-04-11T03:00:59" hostname="LAPTOP-E6JH709M" time="0.0">
+  <properties/>
+  <testcase name="smokeTestCompute()" classname="com.lucas2.ComputeTest" time="0.0"/>
+>>>>>>> bcc4ee233adb46f5db9d19dc3d35033eb7cc3cda
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -2,7 +2,7 @@ package com.lucas2;
 
 import org.junit.jupiter.api.Test;
 import com.lucas.ComputeEngine;
-import com.lucas.ImpComputeEngine;
+import com.lucas.LucasComputeEngine;
 import java.util.ArrayList;
 import java.util.List;
 // Import Mockito methods
@@ -16,9 +16,9 @@ public class ComputeTest {
         // write a smoke test with no mocks at all
         List<Integer> values = new ArrayList<>();
         values.add(1);
-        ComputeEngine engine = new ImpComputeEngine();
+        ComputeEngine engine = new LucasComputeEngine("localhost", 0);
 
-        Assert.assertEquals("The result is: [1]", engine.compute(values));
+        Assert.assertEquals( "2 1", engine.compute(values));
 
     }
 }

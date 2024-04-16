@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package main.proto;
+
+service DataStore {
+  rpc getData(GetDataRequest) returns (GetDataResponse);
+  rpc storeData(StoreDataRequest) returns (StoreDataResponse);
+}
+
+message GetDataRequest {
+  int32 n = 1;
+}
+
+message GetDataResponse {
+  int32 result = 1;
+}
+
+message StoreDataRequest {
+  string key = 1;
+  string value = 2;
+}
+
+message StoreDataResponse {
+  bool success = 1;
+}

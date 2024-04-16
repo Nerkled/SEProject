@@ -9,6 +9,8 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
+//checkstyle warned against using wildcard imports, so I changed it to import only the necessary classes
+// -Robert Bonet
 import com.lucas.ComputeEngine;
 import com.lucas.DataStorageFiles;
 import com.lucas.LucasComputeEngine;
