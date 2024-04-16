@@ -4,7 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
+    <list default="true" id="8bb16ab4-f244-485a-a7a2-71df3b97c7a9" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proto/userToComputeProto.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/lucas/ComputeEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/lucas/ComputeEngine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/lucas/ImpComputeEngine.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/lucas/LucasComputeEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/lucas/LucasComputeEngine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/com/lucas2/ComputeEngineIntegrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/com/lucas2/ComputeEngineIntegrationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/com/lucas2/ComputeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/com/lucas2/ComputeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/com/lucas2/TestDataStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/com/lucas2/TestDataStore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/com/lucas2/TestMultiUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/com/lucas2/TestMultiUser.java" afterDir="false" />
+    </list>
+=======
     <list default="true" id="8bb16ab4-f244-485a-a7a2-71df3b97c7a9" name="Changes" comment="" />
+>>>>>>> bcc4ee233adb46f5db9d19dc3d35033eb7cc3cda
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,6 +46,16 @@
       </state>
     </system>
   </component>
+<<<<<<< HEAD
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+=======
+>>>>>>> bcc4ee233adb46f5db9d19dc3d35033eb7cc3cda
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -51,6 +75,10 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+<<<<<<< HEAD
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+=======
+>>>>>>> bcc4ee233adb46f5db9d19dc3d35033eb7cc3cda
     &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;Gradle.SEProject-4.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
@@ -58,7 +86,12 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;justinfeature14&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+<<<<<<< HEAD
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/robon/OneDrive/Desktop/SEProject-4&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+=======
     &quot;last_opened_file_path&quot;: &quot;C:/Users/robon/OneDrive/Desktop/SEProject-4&quot;
+>>>>>>> bcc4ee233adb46f5db9d19dc3d35033eb7cc3cda
   }
 }</component>
   <component name="RunManager">
@@ -93,5 +126,12 @@
       <updated>1712075846620</updated>
     </task>
     <servers />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="dependencySupport" implementationName="java:com.google.protobuf:protobuf-java" />
+    <option featureType="dependencySupport" implementationName="java:io.grpc:grpc-api" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>

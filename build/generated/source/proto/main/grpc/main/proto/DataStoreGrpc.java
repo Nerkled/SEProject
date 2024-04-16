@@ -186,12 +186,6 @@ public final class DataStoreGrpc {
             return io.grpc.stub.ClientCalls.futureUnaryCall(
                     getChannel().newCall(getGetDataMethod(), getCallOptions()), request);
         }
-
-        public com.google.common.util.concurrent.ListenableFuture<main.proto.UserToComputeProto.StoreDataResponse> storeData(
-                main.proto.UserToComputeProto.StoreDataRequest request) {
-            return io.grpc.stub.ClientCalls.futureUnaryCall(
-                    getChannel().newCall(getStoreDataMethod(), getCallOptions()), request);
-        }
     }
 
     private static final int METHODID_GET_DATA = 0;
