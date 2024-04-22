@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
+    <link `rel="stylesheet" href="css/styles.css">
+    <script src="../server/formHandler.js"></script>
+    <title>Lucas Number Calculator</title>
+</head>
+<body>
+    <h1>Lucas Number Calculator</h1>
+    <p>Upload a file with a list of numbers to calculate the Lucas number for each one.</p>
+
+    <!-- Example of a form that Dropzone can take over -->
+    <form action="/target" class="dropzone">
+        <label for="numberList">Or type in a list of numbers:</label>
+        <input type="text" id="numberList" name="numberList">
+        <label for="outputFileName">Output File Name:</label>
+        <input type="text" id="outputFileName" name="outputFileName">
+        <label for="delimiter">Delimiter (optional):</label>
+        <input type="text" id="delimiter" name="delimiter">
+        <input type="submit" value="Submit">
+    </form>
+    
+</body>
+</html>
