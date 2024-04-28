@@ -15,16 +15,18 @@ public class DataStorageFiles implements StorageToComputeEngineAPI {
         return InputConfig.visitInputConfig(input, new InputConfig.InputConfigVisitor<List<Integer>>() {
             @Override
             public List<Integer> visitFile(FileInputConfig fileInputConfig) {
-                String filePath = fileInputConfig.getFileName(); // Assuming fileInputConfig provides a method to get the file path
+                String filePath = fileInputConfig.getFileName();
                 try (Scanner scanner = new Scanner(new File(filePath))) {
                     while (scanner.hasNextLine()) {
-                        String data = scanner.nextLine();
-                        try {
-                            int value = Integer.parseInt(data);
-                            list.add(value);
-                        } catch (NumberFormatException e) {
-                            System.err.println("Error parsing data: " + data);
-                            e.printStackTrace();
+                        String data = scanner.nextLine().trim(); // Trim whitespace
+                        if (!data.isEmpty()) { // Skip empty lines
+                            try {
+                                int value = Integer.parseInt(data);
+                                list.add(value);
+                            } catch (NumberFormatException e) {
+                                System.err.println("Error parsing data: " + data);
+                                e.printStackTrace();
+                            }
                         }
                     }
                 } catch (FileNotFoundException e) {
@@ -33,6 +35,7 @@ public class DataStorageFiles implements StorageToComputeEngineAPI {
                 }
                 return list;
             }
+
         });
     }
 
