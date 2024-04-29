@@ -4,3 +4,13 @@
  * This is a general purpose Gradle build.
  * To learn more about Gradle by exploring our Samples at https://docs.gradle.org/8.6/samples
  */
+
+ dependencies {
+    // gRPC
+    implementation 'io.grpc:grpc-netty-shaded:1.42.1'
+    implementation 'io.grpc:grpc-protobuf:1.42.1'
+    implementation 'io.grpc:grpc-stub:1.42.1'
+
+    // Protobuf
+    implementation 'com.google.protobuf:protobuf-java:3.19.1'
+}
