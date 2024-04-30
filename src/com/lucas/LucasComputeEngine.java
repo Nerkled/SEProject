@@ -22,6 +22,8 @@ public class LucasComputeEngine implements ComputeEngine {
         this.channel = ManagedChannelBuilder.forAddress(host, port).usePlaintext().build();
         this.blockingStub = DataStoreGrpc.newBlockingStub(channel);
         this.lucasMap = new HashMap<>();
+        lucasMap.put(0,BigInteger.valueOf(2));
+        lucasMap.put(1,BigInteger.valueOf(1));
 
 
     }
@@ -98,8 +100,7 @@ public class LucasComputeEngine implements ComputeEngine {
             BigInteger one = BigInteger.valueOf(1);
             return one;
         }
-        BigInteger result = lucas(n - 1).add(lucas(n - 2));
-       // int result = lucas(n - 1) + lucas(n - 2);
+        BigInteger result = slowLucas(n - 1).add(slowLucas(n - 2));
         //System.out.println(result); // remove when done testing 
         return result;
     }
@@ -119,8 +120,9 @@ public class LucasComputeEngine implements ComputeEngine {
             return one;
         }
         BigInteger result = lucas(n - 1).add(lucas(n - 2));
+        lucasMap.put(n,result);
        // int result = lucas(n - 1) + lucas(n - 2);
-        //System.out.println(result); // remove when done testing 
+        //System.out.println(result + "fast"); // remove when done testing 
         return result;
     }
 
