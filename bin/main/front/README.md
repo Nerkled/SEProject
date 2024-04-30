@@ -16,6 +16,7 @@ This repository contains the front-end component for calculating the Lucas numbe
 
 ## Technologies
 
+  - Vue  
   - HTML, CSS, JavaScript
 
 ## Implementation Details

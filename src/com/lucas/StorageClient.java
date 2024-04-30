@@ -40,7 +40,7 @@ public class StorageClient {
     }
 
     public static void main(String[] args) throws Exception {
-        StorageClient client = new StorageClient("localhost", 50051);
+        StorageClient client = new StorageClient("localhost", 50052);
 
         int result = client.getData(123);
         System.out.println("GetData response: " + result);
