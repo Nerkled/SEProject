@@ -1,7 +1,12 @@
 package com.lucas;
 
-import java.util.Arrays;
+
 import java.util.List;
+import java.util.ArrayList;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
 @SuppressWarnings("unused")
 public class UserToComputeEngineImp implements UserToComputeEngineAPI {
     private final StorageToComputeEngineAPI dataStore;
@@ -13,8 +18,12 @@ public class UserToComputeEngineImp implements UserToComputeEngineAPI {
     }
 
     //@Override
-    //Massive Change here
-    public ComputeResult compute(ComputeRequest request) {
+    public ComputeResult compute(Request request) {
+        // Wire this to lucas compute engine
+        // Wire this to datastorage to write out to output path
+        List<Integer> integers = dataStore.read(request.getInputConfig());
+        dataStore.write(request.getOutputConfig(), computeEngine.compute(integers));
         return ComputeResult.SUCCESS;
     }
+    
 }

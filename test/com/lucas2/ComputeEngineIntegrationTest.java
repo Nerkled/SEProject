@@ -6,7 +6,9 @@ import org.junit.Assert;
 import com.lucas.ComputeEngine;
 import com.lucas.ComputeRequest;
 import com.lucas.ComputeResult;
-import com.lucas.ImpComputeEngine;
+import com.lucas.Result;
+import com.lucas.Request;
+import com.lucas.LucasComputeEngine;
 import com.lucas.StorageToComputeEngineAPI;
 import com.lucas.StorageToComputeEngineImp;
 import org.junit.jupiter.api.Test;
@@ -14,13 +16,13 @@ import org.mockito.Mockito;
 import java.util.ArrayList;
 import java.util.List;
 import static org.mockito.Mockito.when;
-
+@SuppressWarnings("unused")
 public class ComputeEngineIntegrationTest {
 
     @Test
     public void testComputeEngineIntegration() {
         // Set up input values for the test
-        ComputeEngine engine = new ImpComputeEngine();
+        ComputeEngine engine = new LucasComputeEngine("localhost",0);
 
         //TestStorageToComputeEngine testStorage = new TestStorageToComputeEngine();
         StorageToComputeEngineAPI dataStorage = new StorageToComputeEngineImp();
@@ -31,7 +33,7 @@ public class ComputeEngineIntegrationTest {
 
         InMemoryOutputConfig output = new InMemoryOutputConfig();
 
-        ComputeRequest mockRequest = Mockito.mock(ComputeRequest.class);
+        Request mockRequest = Mockito.mock(Request.class);
         when(mockRequest.getInputConfig()).thenReturn(input);
         when(mockRequest.getOutputConfig()).thenReturn(output);
 

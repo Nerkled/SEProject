@@ -1,43 +1,55 @@
 package com.lucas;
-import java.util.List;
 
-import com.lucas.Result.ResultStatus;
+import java.util.List;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 
 public class UserToComputeEngineComponent implements UserToComputeEngineAPI {
 
     private final DataStorageFiles dataStorage;
     private final LucasComputeEngine computeComponent;
+    private final ExecutorService threadPool; // thread pool for threading
 
-    public UserToComputeEngineComponent(DataStorageFiles dataStorage, LucasComputeEngine computeComponent) {
+    public UserToComputeEngineComponent(DataStorageFiles dataStorage, LucasComputeEngine computeComponent, int numberOfThreads) {
         this.dataStorage = dataStorage;
         this.computeComponent = computeComponent;
+        this.threadPool = Executors.newFixedThreadPool(numberOfThreads);
     }
 
     @Override
-    public ComputeResult compute(ComputeRequest request) {
+    public ComputeResult compute(Request request) {
         try {
-            // b. Request data storage to read integers from the specified location
+
             InputConfig inputConfig = request.getInputConfig();
             OutputConfig outputConfig = request.getOutputConfig();
             List<Integer> inputIntegers = dataStorage.read(inputConfig);
-            // c. Pass the integers to the compute component
-            String result = computeComponent.compute(inputIntegers);
 
-
-            // d. Request data storage to write the results to the output
-            Result storageResult = dataStorage.write(outputConfig, result.toString());
-
-            // Return a suitable result status back to the user
-            if (storageResult.getResult() == ResultStatus.SUCCESS) {
-                return ComputeResult.SUCCESS;
-            } else {
-                return ComputeResult.FAILURE;
+            // hopefully this is now parallel
+            for (Integer input : inputIntegers) {
+                Callable<Void> task = () -> {
+                    String result = computeComponent.compute(input);
+                    Result storageResult = dataStorage.write(outputConfig, result);
+                    if (storageResult.getResult() == Result.ResultStatus.SUCCESS) {
+                        System.out.println("Computation and storage successful");
+                    } else {
+                        System.out.println("Computation or storage failed");
+                    }
+                    return null; // Return type is Void
+                };
+                Future<Void> submit = threadPool.submit(task);
             }
 
+            return ComputeResult.SUCCESS;
+
         } catch (Exception e) {
-            // Handle exceptions appropriately and return an error status
             return ComputeResult.FAILURE;
         }
     }
+
+    // Method to shut down the thread pool
+    public void shutdownThreadPool() {
+        threadPool.shutdown();
+    }
 }
- 

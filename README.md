@@ -6,3 +6,4 @@
 
 ### The computation that we are going to be doing for our project will be computing the Lucas number.
 
+### Number of threads we are using for our computation coordinator: 5
