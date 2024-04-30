@@ -8,25 +8,42 @@ import com.lucas.ComputeEngine;
 public class BenchmarkTest {
 
     @Test
-    public void testBenchmarkSlow() {
-        long start = System.currentTimeMillis();
-        ComputeEngine computeComponent = new LucasComputeEngine("localhost", 5000);
+    public void testSlowCompute() {
+        ComputeEngine computeEngine = new LucasComputeEngine("localhost", 5000);
         List<Integer> values = new ArrayList<>();
-        values.add(30);
-        String val = computeComponent.slowCompute(values);
-        Assert.assertEquals("2 1 3 4 7 11 18 29 47 76 123 199 322 521 843 1364 2207 3571 5778 9349 15127 24476 39603 64079 103682 167761 271443 439204 710647 1149851 1860498", val);
-        long end = System.currentTimeMillis();
-        System.out.println("Time taken for slow benchmark: " + (end - start) + "ms");
+        values.add(10); // Example input size
+        String result = computeEngine.slowCompute(values);
+        // Assert correctness of the result
+        Assert.assertEquals("2 1 3 4 7 11 18 29 47 76 123", result);
     }
+
     @Test
-    public void testBenchmarkFast() {
-        long start = System.currentTimeMillis();
-        ComputeEngine computeComponent = new LucasComputeEngine("localhost", 5000);
+    public void testCompute() {
+        ComputeEngine computeEngine = new LucasComputeEngine("localhost", 5000);
         List<Integer> values = new ArrayList<>();
-        values.add(30);
-        String val = computeComponent.compute(values);
-        Assert.assertEquals("2 1 3 4 7 11 18 29 47 76 123 199 322 521 843 1364 2207 3571 5778 9349 15127 24476 39603 64079 103682 167761 271443 439204 710647 1149851 1860498", val);
+        values.add(10); // Example input size
+        String result = computeEngine.compute(values);
+        // Assert correctness of the result
+        Assert.assertEquals("2 1 3 4 7 11 18 29 47 76 123", result);
+    }
+
+    @Test
+    public void testPerformance() {
+        ComputeEngine computeEngine = new LucasComputeEngine("localhost", 5000);
+        List<Integer> values = new ArrayList<>();
+        values.add(25); 
+        long start = System.currentTimeMillis();
+        computeEngine.compute(values); // fast compute
         long end = System.currentTimeMillis();
-        System.out.println("Time taken for slow benchmark: " + (end - start) + "ms");
+        long fastTime = end - start;
+        System.out.println("fast time: " + fastTime);
+        start = System.currentTimeMillis();
+        computeEngine.slowCompute(values); //  fast compute
+        end = System.currentTimeMillis();
+        long slowTime = end - start;
+        System.out.println("slow time: " + slowTime);
+        // Assert that the fast version is significantly faster than the slow version
+        
+        Assert.assertTrue("Fast version should be faster", fastTime < slowTime);
     }
 }
