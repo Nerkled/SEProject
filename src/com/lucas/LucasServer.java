@@ -7,6 +7,7 @@ import io.grpc.Grpc;
 import io.grpc.InsecureServerCredentials;
 import io.grpc.Server;
 import io.grpc.protobuf.services.ProtoReflectionService;
+@SuppressWarnings("checkstyle:all")
 
 public class LucasServer { // Boilerplate TODO: Change name of class
 	private io.grpc.Server server;
