@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<<<<<<< HEAD
-<testsuite name="com.lucas2.ComputeEngineIntegrationTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-04-15T22:25:02" hostname="LAPTOP-E6JH709M" time="9.601">
+<testsuite name="com.lucas2.ComputeEngineIntegrationTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-05-06T23:34:00" hostname="LAPTOP-E6JH709M" time="1.824">
   <properties/>
-  <testcase name="testComputeEngineIntegration()" classname="com.lucas2.ComputeEngineIntegrationTest" time="9.601"/>
-=======
-<testsuite name="com.lucas2.ComputeEngineIntegrationTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-04-11T03:00:58" hostname="LAPTOP-E6JH709M" time="0.908">
-  <properties/>
-  <testcase name="testComputeEngineIntegration()" classname="com.lucas2.ComputeEngineIntegrationTest" time="0.908"/>
->>>>>>> bcc4ee233adb46f5db9d19dc3d35033eb7cc3cda
+  <testcase name="testComputeEngineIntegration()" classname="com.lucas2.ComputeEngineIntegrationTest" time="1.824"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

@@ -30,7 +30,7 @@ public class LucasComputeEngine implements ComputeEngine {
 
     @Override
     public int getData(int key) {
-        GetDataRequest request = GetDataRequest.newBuilder().setvalues(key).build();
+        GetDataRequest request = GetDataRequest.newBuilder().setValues(1, 2).build();
         GetDataResponse response = blockingStub.getData(request);
         return response.getResult();
     }

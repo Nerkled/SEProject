@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.lucas2.BenchmarkTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2024-05-06T23:33:59" hostname="LAPTOP-E6JH709M" time="0.525">
+  <properties/>
+  <testcase name="testPerformance()" classname="com.lucas2.BenchmarkTest" time="0.515"/>
+  <testcase name="testSlowCompute()" classname="com.lucas2.BenchmarkTest" time="0.003"/>
+  <testcase name="testCompute()" classname="com.lucas2.BenchmarkTest" time="0.002"/>
+  <system-out><![CDATA[fast time: 2
+slow time: 26
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
