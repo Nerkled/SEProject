@@ -5,6 +5,7 @@ package main.proto;
 service DataStore {
   rpc getData(GetDataRequest) returns (GetDataResponse);
   rpc storeData(StoreDataRequest) returns (StoreDataResponse);
+
   rpc createLucasServer(GetDataRequest) returns (GetDataResponse);
 }
 
@@ -17,7 +18,6 @@ message GetDataRequest {
 message GetDataResponse {
   string result = 1;
   string errorMessage = 2;
-}
 
 message StoreDataRequest {
   string key = 1;
