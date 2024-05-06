@@ -837,16 +837,10 @@ public final class UserToComputeProto {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string result = 1;</code>
+     * <code>int32 result = 1;</code>
      * @return The result.
      */
-    java.lang.String getResult();
-    /**
-     * <code>string result = 1;</code>
-     * @return The bytes for result.
-     */
-    com.google.protobuf.ByteString
-        getResultBytes();
+    int getResult();
 
     /**
      * <code>string errorMessage = 2;</code>
@@ -873,7 +867,6 @@ public final class UserToComputeProto {
       super(builder);
     }
     private GetDataResponse() {
-      result_ = "";
       errorMessage_ = "";
     }
 
@@ -898,42 +891,14 @@ public final class UserToComputeProto {
     }
 
     public static final int RESULT_FIELD_NUMBER = 1;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object result_ = "";
+    private int result_ = 0;
     /**
-     * <code>string result = 1;</code>
+     * <code>int32 result = 1;</code>
      * @return The result.
      */
     @java.lang.Override
-    public java.lang.String getResult() {
-      java.lang.Object ref = result_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        result_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string result = 1;</code>
-     * @return The bytes for result.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getResultBytes() {
-      java.lang.Object ref = result_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        result_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public int getResult() {
+      return result_;
     }
 
     public static final int ERRORMESSAGE_FIELD_NUMBER = 2;
@@ -989,8 +954,8 @@ public final class UserToComputeProto {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(result_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, result_);
+      if (result_ != 0) {
+        output.writeInt32(1, result_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(errorMessage_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, errorMessage_);
@@ -1004,8 +969,9 @@ public final class UserToComputeProto {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(result_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, result_);
+      if (result_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, result_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(errorMessage_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, errorMessage_);
@@ -1025,8 +991,8 @@ public final class UserToComputeProto {
       }
       main.proto.UserToComputeProto.GetDataResponse other = (main.proto.UserToComputeProto.GetDataResponse) obj;
 
-      if (!getResult()
-          .equals(other.getResult())) return false;
+      if (getResult()
+          != other.getResult()) return false;
       if (!getErrorMessage()
           .equals(other.getErrorMessage())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
@@ -1041,7 +1007,7 @@ public final class UserToComputeProto {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + RESULT_FIELD_NUMBER;
-      hash = (53 * hash) + getResult().hashCode();
+      hash = (53 * hash) + getResult();
       hash = (37 * hash) + ERRORMESSAGE_FIELD_NUMBER;
       hash = (53 * hash) + getErrorMessage().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
@@ -1175,7 +1141,7 @@ public final class UserToComputeProto {
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        result_ = "";
+        result_ = 0;
         errorMessage_ = "";
         return this;
       }
@@ -1262,10 +1228,8 @@ public final class UserToComputeProto {
 
       public Builder mergeFrom(main.proto.UserToComputeProto.GetDataResponse other) {
         if (other == main.proto.UserToComputeProto.GetDataResponse.getDefaultInstance()) return this;
-        if (!other.getResult().isEmpty()) {
-          result_ = other.result_;
-          bitField0_ |= 0x00000001;
-          onChanged();
+        if (other.getResult() != 0) {
+          setResult(other.getResult());
         }
         if (!other.getErrorMessage().isEmpty()) {
           errorMessage_ = other.errorMessage_;
@@ -1298,11 +1262,11 @@ public final class UserToComputeProto {
               case 0:
                 done = true;
                 break;
-              case 10: {
-                result_ = input.readStringRequireUtf8();
+              case 8: {
+                result_ = input.readInt32();
                 bitField0_ |= 0x00000001;
                 break;
-              } // case 10
+              } // case 8
               case 18: {
                 errorMessage_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000002;
@@ -1325,74 +1289,34 @@ public final class UserToComputeProto {
       }
       private int bitField0_;
 
-      private java.lang.Object result_ = "";
+      private int result_ ;
       /**
-       * <code>string result = 1;</code>
+       * <code>int32 result = 1;</code>
        * @return The result.
        */
-      public java.lang.String getResult() {
-        java.lang.Object ref = result_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          result_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      @java.lang.Override
+      public int getResult() {
+        return result_;
       }
       /**
-       * <code>string result = 1;</code>
-       * @return The bytes for result.
-       */
-      public com.google.protobuf.ByteString
-          getResultBytes() {
-        java.lang.Object ref = result_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          result_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string result = 1;</code>
+       * <code>int32 result = 1;</code>
        * @param value The result to set.
        * @return This builder for chaining.
        */
-      public Builder setResult(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+      public Builder setResult(int value) {
+
         result_ = value;
         bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
       /**
-       * <code>string result = 1;</code>
+       * <code>int32 result = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearResult() {
-        result_ = getDefaultInstance().getResult();
         bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string result = 1;</code>
-       * @param value The bytes for result to set.
-       * @return This builder for chaining.
-       */
-      public Builder setResultBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
-        result_ = value;
-        bitField0_ |= 0x00000001;
+        result_ = 0;
         onChanged();
         return this;
       }
@@ -2741,7 +2665,7 @@ public final class UserToComputeProto {
       "\n\030userToComputeProto.proto\022\nmain.proto\"@" +
       "\n\016GetDataRequest\022\r\n\005model\030\001 \001(\t\022\017\n\007inclu" +
       "de\030\002 \001(\010\022\016\n\006values\030\003 \003(\005\"7\n\017GetDataRespo" +
-      "nse\022\016\n\006result\030\001 \001(\t\022\024\n\014errorMessage\030\002 \001(" +
+      "nse\022\016\n\006result\030\001 \001(\005\022\024\n\014errorMessage\030\002 \001(" +
       "\t\".\n\020StoreDataRequest\022\013\n\003key\030\001 \001(\t\022\r\n\005va" +
       "lue\030\002 \001(\t\"$\n\021StoreDataResponse\022\017\n\007succes" +
       "s\030\001 \001(\0102\347\001\n\tDataStore\022B\n\007getData\022\032.main." +

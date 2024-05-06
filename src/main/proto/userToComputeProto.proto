@@ -15,7 +15,7 @@ message GetDataRequest {
 }
 
 message GetDataResponse {
-  string result = 1;
+  int32 result = 1;
   string errorMessage = 2;
 }
 
