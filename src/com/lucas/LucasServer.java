@@ -1,4 +1,5 @@
 package com.lucas;
+
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import io.grpc.Grpc;
@@ -8,6 +9,7 @@ import io.grpc.protobuf.services.ProtoReflectionService;
 
 public class LucasServer { // Boilerplate TODO: Change name of class
 	private io.grpc.Server server;
+
 	private void start() throws IOException {
 		/* The port on which the server should run */
 		int port = 50051;
