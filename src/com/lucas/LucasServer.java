@@ -7,6 +7,7 @@ import io.grpc.InsecureServerCredentials;
 import io.grpc.Server;
 import io.grpc.protobuf.services.ProtoReflectionService;
 
+@SuppressWarnings("checkstyle:indentation")
 public class LucasServer {
     private io.grpc.Server server;
 
