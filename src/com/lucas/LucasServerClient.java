@@ -28,7 +28,7 @@ public class LucasServerClient {
         if (!response.getErrorMessage().isEmpty()) {
             System.err.println("Error: " + response.getErrorMessage());
         } else {
-           System.out.println("Order number: " + response.getResult());
+            System.out.println("Order number: " + response.getResult());
         }
     }
     public static void main(String[] args) throws Exception {
