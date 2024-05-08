@@ -5,7 +5,6 @@ import com.lucas.FileOutputConfig;
 import com.lucas.Request;
 import com.lucas.UserToComputeEngineAPI;
 import com.lucas.UserToComputeEngineImp;
-
 import java.io.File;
 import java.util.List;
 
@@ -25,7 +24,6 @@ public class TestUser {
     public void run(String outputPath) {
         char delimiter = ';';
         String inputPath = "test" + File.separatorChar + "com" + File.separatorChar + "lucas2" + File.separatorChar + "testInputFile.test";
-
         FileInputConfig input = new FileInputConfig(inputPath);
         FileOutputConfig output = new FileOutputConfig(outputPath);
         Request request = new Request(input,output,delimiter);

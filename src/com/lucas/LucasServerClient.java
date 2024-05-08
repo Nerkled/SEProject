@@ -6,12 +6,9 @@ import io.grpc.Grpc;
 import io.grpc.InsecureChannelCredentials;
 import io.grpc.ManagedChannel;
 import io.grpc.StatusRuntimeException;
-import main.proto.UserToComputeProto.GetDataRequest;
-import main.proto.UserToComputeProto.GetDataResponse;
-import main.proto.UserToComputeProto.StoreDataRequest;
-import main.proto.UserToComputeProto.StoreDataResponse;
 import main.proto.DataStoreGrpc;
 import main.proto.DataStoreGrpc.DataStoreBlockingStub;
+import main.proto.UserToComputeProto;
 
 public class LucasServerClient {
     private final DataStoreBlockingStub blockingStub;
@@ -21,8 +18,8 @@ public class LucasServerClient {
     }
 
     public void createLucasServer() {
-        GetDataRequest getData = GetDataRequest.newBuilder().setModel("android").setInclude(true).build();
-        GetDataResponse response;
+        UserToComputeProto.GetDataRequest getData = UserToComputeProto.GetDataRequest.newBuilder().setModel("android").setInclude(true).build();
+        UserToComputeProto.GetDataResponse response;
         try {
             response = blockingStub.getData(getData);
         } catch (StatusRuntimeException e) {

@@ -17,7 +17,7 @@ public class Main {
         LucasComputeEngine computeComponent = new LucasComputeEngine("localhost", 0);
         UserToComputeEngineAPI coordinator = new UserToComputeEngineComponent(dataStorageFiles, computeComponent,10);
         char delimiter = ';';
-        String inputPath = "test" + File.separatorChar + "com" + File.separatorChar + "lucas2" + File.separatorChar + "testInputFileLarge.test";
+        String inputPath = "test" + File.separatorChar + "com" + File.separatorChar + "lucas2" + File.separatorChar + "testInputFile.test";
         String outputPath = "LucasOutputLarge";
 
         FileInputConfig input = new FileInputConfig(inputPath);

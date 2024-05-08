@@ -6,12 +6,9 @@ import java.math.BigInteger;
 
 import main.proto.DataStoreGrpc;
 import main.proto.DataStoreGrpc.DataStoreBlockingStub;
-import main.proto.UserToComputeProto;
-import main.proto.UserToComputeProto.GetDataRequest;
-import main.proto.UserToComputeProto.GetDataResponse;
-import main.proto.UserToComputeProto.StoreDataRequest;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
+import main.proto.UserToComputeProto;
 
 public class LucasComputeEngine implements ComputeEngine {
     private final ManagedChannel channel;
@@ -29,15 +26,15 @@ public class LucasComputeEngine implements ComputeEngine {
     }
 
     @Override
-    public int getData(int key) {
-        GetDataRequest request = GetDataRequest.newBuilder().setN(key).build();
-        GetDataResponse response = blockingStub.getData(request);
+    public String getData(int key) {
+        UserToComputeProto.GetDataRequest request = UserToComputeProto.GetDataRequest.newBuilder().addValues(key).build();
+        UserToComputeProto.GetDataResponse response = blockingStub.getData(request);
         return response.getResult();
     }
 
-    @Override
-    public void putData(StoreDataRequest request, DataStoreBlockingStub dataStoreStub) {
+    public void putData(UserToComputeProto.StoreDataRequest request, DataStoreBlockingStub dataStoreStub) {
         UserToComputeProto.StoreDataResponse response = blockingStub.storeData(request);
+        System.out.println(response);
         if (!response.getSuccess()) {
             throw new RuntimeException("Failed to store data");
         }
