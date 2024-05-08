@@ -2,12 +2,9 @@ package com.lucas;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import main.proto.DataStoreGrpc;
+import main.proto.UserToComputeProto;
 //checkstyle warned against using wildcard imports, so I changed it to import only the necessary classes
 // -Robert Bonet
-import main.proto.UserToComputeProto.GetDataRequest;
-import main.proto.UserToComputeProto.GetDataResponse;
-import main.proto.UserToComputeProto.StoreDataRequest;
-import main.proto.UserToComputeProto.StoreDataResponse;
 
 
 public class StorageClient {
@@ -27,22 +24,22 @@ public class StorageClient {
         channel.shutdown().awaitTermination(5, java.util.concurrent.TimeUnit.SECONDS);
     }
 
-    public int getData(int n) {
-        GetDataRequest request = GetDataRequest.newBuilder().setN(n).build();
-        GetDataResponse response = blockingStub.getData(request);
+    public String getData(int n) {
+        UserToComputeProto.GetDataRequest request = UserToComputeProto.GetDataRequest.newBuilder().addValues(n).build();
+        UserToComputeProto.GetDataResponse response = blockingStub.getData(request);
         return response.getResult();
     }
 
     public boolean storeData(String key, String value) {
-        StoreDataRequest request = StoreDataRequest.newBuilder().setKey(key).setValue(value).build();
-        StoreDataResponse response = blockingStub.storeData(request);
+        UserToComputeProto.StoreDataRequest request = UserToComputeProto.StoreDataRequest.newBuilder().setKey(key).setValue(value).build();
+        UserToComputeProto.StoreDataResponse response = blockingStub.storeData(request);
         return response.getSuccess();
     }
 
     public static void main(String[] args) throws Exception {
-        StorageClient client = new StorageClient("localhost", 50051);
+        StorageClient client = new StorageClient("localhost", 50052);
 
-        int result = client.getData(123);
+        String result = client.getData(123);
         System.out.println("GetData response: " + result);
 
         boolean success = client.storeData("key1", "value1");

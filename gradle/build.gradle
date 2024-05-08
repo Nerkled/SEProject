@@ -58,3 +58,12 @@ protobuf {
 		all()*.plugins { grpc {} }
 	}
 }
+
+sourceSets {
+    main {
+        java {
+            srcDir 'src/main/com'
+            srcDir 'src/main/proto'
+        }
+    }
+}
