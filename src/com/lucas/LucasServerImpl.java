@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
+
 public class LucasServerImpl extends DataStoreImplBase {
     @Override
     public void getData(UserToComputeProto.GetDataRequest request, StreamObserver<UserToComputeProto.GetDataResponse> responseObserver) {
@@ -40,6 +41,11 @@ public class LucasServerImpl extends DataStoreImplBase {
         }
         UserToComputeProto.GetDataResponse response = UserToComputeProto.GetDataResponse.newBuilder()
             .setResult(userResponse)
+
+        ComputeEngine computeComponent = new LucasComputeEngine("localhost", 50052);
+        String result = computeComponent.compute(request.getValuesList()); // not giving correct result
+        UserToComputeProto.GetDataResponse response = UserToComputeProto.GetDataResponse.newBuilder()
+            .setResult(result)
             .build();
         responseObserver.onNext(response);
         responseObserver.onCompleted();
