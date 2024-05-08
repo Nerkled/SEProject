@@ -8,7 +8,7 @@ import io.grpc.Server;
 import io.grpc.protobuf.services.ProtoReflectionService;
 
 public class LucasServer {
-  private io.grpc.Server server;
+    private io.grpc.Server server;
 
 	private void start() throws IOException {
 		/* The port on which the server should run */
