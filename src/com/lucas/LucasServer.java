@@ -7,14 +7,14 @@ import io.grpc.InsecureServerCredentials;
 import io.grpc.Server;
 import io.grpc.protobuf.services.ProtoReflectionService;
 
-public class LucasServer { // Boilerplate TODO: Change name of class
-	private io.grpc.Server server;
+public class LucasServer {
+private io.grpc.Server server;
 
 	private void start() throws IOException {
 		/* The port on which the server should run */
 		int port = 50051;
 		server = Grpc.newServerBuilderForPort(port, InsecureServerCredentials.create())
-				.addService(new LucasServerImpl()) // Boilerplate TODO: Change name of class
+				.addService(new LucasServerImpl())
 				.addService(ProtoReflectionService.newInstance())
 				.build()
 				.start();
