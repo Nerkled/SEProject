@@ -22,7 +22,7 @@ public class TestUser {
     // TODO 4: Call the appropriate method(s) on the coordinator to get it to 
     // run the compute job specified by inputPath, outputPath, and delimiter
     public void run(String outputPath) {
-        char delimiter = ';';
+        String delimiter = "\n";
         String inputPath = "test" + File.separatorChar + "com" + File.separatorChar + "lucas2" + File.separatorChar + "testInputFile.test";
         FileInputConfig input = new FileInputConfig(inputPath);
         FileOutputConfig output = new FileOutputConfig(outputPath);

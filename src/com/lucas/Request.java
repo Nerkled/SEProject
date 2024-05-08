@@ -3,9 +3,9 @@ package com.lucas;
 public class Request implements ComputeRequest {
     private InputConfig inputConfig;
     private OutputConfig outputConfig;
-    private char delimiter;
+    private String delimiter;
 
-    public Request(InputConfig inputConfig, OutputConfig outputConfig, char delimiter) {
+    public Request(InputConfig inputConfig, OutputConfig outputConfig, String delimiter) {
         this.inputConfig = inputConfig;
         this.outputConfig = outputConfig;
         this.delimiter = delimiter;
@@ -22,7 +22,7 @@ public class Request implements ComputeRequest {
     }
 
     @Override
-    public char getDelimiter() {
+    public String getDelimiter() {
         return delimiter;
     }
 

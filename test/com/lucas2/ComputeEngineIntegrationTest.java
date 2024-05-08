@@ -1,20 +1,10 @@
 package com.lucas2;
 
-import com.lucas.UserToComputeEngineAPI;
-import com.lucas.UserToComputeEngineImp;
+import com.lucas.*;
 import org.junit.Assert;
-import com.lucas.ComputeEngine;
-import com.lucas.ComputeRequest;
-import com.lucas.ComputeResult;
-import com.lucas.Result;
-import com.lucas.Request;
-import com.lucas.LucasComputeEngine;
-import com.lucas.StorageToComputeEngineAPI;
-import com.lucas.StorageToComputeEngineImp;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
-import java.util.ArrayList;
-import java.util.List;
+
 import static org.mockito.Mockito.when;
 @SuppressWarnings("unused")
 public class ComputeEngineIntegrationTest {
