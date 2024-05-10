@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-
+@SuppressWarnings("checkstyle:RightCurlySame")
 public class LucasServerImpl extends DataStoreImplBase {
     @Override
     public void getData(UserToComputeProto.GetDataRequest request, StreamObserver<UserToComputeProto.GetDataResponse> responseObserver) {
