@@ -1,8 +1,7 @@
-package com.lucas2;
+package com.lucas;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-import com.lucas.InputConfig;
 
 public class InMemoryInputConfig implements InputConfig{
     //final so it is immutable

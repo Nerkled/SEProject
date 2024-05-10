@@ -9,9 +9,9 @@ service DataStore {
 }
 
 message GetDataRequest {
-  string model = 1;
-  bool include = 2;
-  repeated int32 values = 3; 
+  repeated int32 values = 1;
+  optional string fileName =2;
+
 }
 
 message GetDataResponse {
