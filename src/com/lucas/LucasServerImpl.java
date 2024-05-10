@@ -43,8 +43,10 @@ public class LucasServerImpl extends DataStoreImplBase {
             .setResult(userResponse)
 
         ComputeEngine computeComponent = new LucasComputeEngine("localhost", 50052);
-        String result = computeComponent.compute(request.getValuesList()); // not giving correct result
-UserToComputeProto.GetDataResponse response = UserToComputeProto.GetDataResponse.newBuilder().setResult(userResponse).build();
+        String result = computeComponent.compute(request.getValuesList()); 
+        UserToComputeProto.GetDataResponse.Builder responseBuilder = UserToComputeProto.GetDataResponse.newBuilder();
+        responseBuilder.setResult(userResponse);
+        UserToComputeProto.GetDataResponse response = responseBuilder.build();
         responseObserver.onNext(response);
         responseObserver.onCompleted();
     }
