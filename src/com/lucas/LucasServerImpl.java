@@ -39,22 +39,10 @@ public class LucasServerImpl extends DataStoreImplBase {
         }else {
             userResponse = "Error";
         }
-<<<<<<< HEAD
         //this line isn't working for some reason
         UserToComputeProto.GetDataResponse.Builder responseBuilder = UserToComputeProto.GetDataResponse.newBuilder();
         responseBuilder.setResult(userResponse);
         UserToComputeProto.GetDataResponse response = responseBuilder.build();
-
-=======
-        UserToComputeProto.GetDataResponse response = UserToComputeProto.GetDataResponse.newBuilder()
-            .setResult(userResponse)
-
-        ComputeEngine computeComponent = new LucasComputeEngine("localhost", 50052);
-        String result = computeComponent.compute(request.getValuesList()); 
-        UserToComputeProto.GetDataResponse.Builder responseBuilder = UserToComputeProto.GetDataResponse.newBuilder();
-        responseBuilder.setResult(userResponse);
-        UserToComputeProto.GetDataResponse response = responseBuilder.build();
->>>>>>> 195dc173221ca72b470e116988b3dd681d181005
         responseObserver.onNext(response);
         responseObserver.onCompleted();
     }
