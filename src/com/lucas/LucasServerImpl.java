@@ -44,9 +44,7 @@ public class LucasServerImpl extends DataStoreImplBase {
 
         ComputeEngine computeComponent = new LucasComputeEngine("localhost", 50052);
         String result = computeComponent.compute(request.getValuesList()); // not giving correct result
-        UserToComputeProto.GetDataResponse response = UserToComputeProto.GetDataResponse.newBuilder()
-            .setResult(result)
-            .build();
+UserToComputeProto.GetDataResponse response = UserToComputeProto.GetDataResponse.newBuilder().setResult(userResponse).build();
         responseObserver.onNext(response);
         responseObserver.onCompleted();
     }
