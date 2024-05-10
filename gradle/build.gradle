@@ -1,5 +1,6 @@
 plugins {
 	id 'com.google.protobuf' version '0.9.4'
+	id "com.github.node-gradle.node" version "7.0.2"
 }
 
 apply plugin: 'java'
@@ -11,7 +12,9 @@ sourceSets {
 		java {
 			srcDirs = ['src',
 					   'build/generated/source/proto/main/grpc',
-					   'build/generated/source/proto/main/java']
+					   'build/generated/source/proto/main/java',
+					   'src/main/com',
+					   'src/main/proto']
 		}
 	}
 	test {
@@ -23,7 +26,7 @@ sourceSets {
 
 repositories {
 	mavenCentral()
-} 
+}
 
 test {
 	useJUnitPlatform()
@@ -49,6 +52,10 @@ dependencies {
 	testImplementation('org.mockito:mockito-core:5.10.0')
 }
 
+task compileJavaScript(type: NodeTask, dependsOn: 'npmInstall') {
+	script = file('./src/front/server/app.js') // Replace 'path/to/your/javascript/script.js' with the actual path to your JavaScript file
+}
+
 protobuf {
 	protoc { artifact = "com.google.protobuf:protoc:${protocVersion}" }
 	plugins {
@@ -59,11 +66,8 @@ protobuf {
 	}
 }
 
-sourceSets {
-    main {
-        java {
-            srcDir 'src/main/com'
-            srcDir 'src/main/proto'
-        }
-    }
+node {
+	version = '14.17.0' // Specify the Node.js version
+	npmVersion = '6.14.13' // Specify the npm version
+	download = true // Download Node.js and npm if not already installed
 }

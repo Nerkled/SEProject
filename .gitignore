@@ -1,9 +1,25 @@
-*.class
-.classpath
-.project
-.settings
+``# Node.js dependencies
+node_modules/
+
+# Gradle Wrapper
+.gradle/
+gradlew
+gradlew.bat
+gradle/
+
+# IDE files
+.idea/
 *.iml
-*.ipr
-*.iws
-.gradle
-build
+.vscode/
+
+# Build output
+build/
+dist/
+
+# Environment variables
+.env
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log* ``
