@@ -33,7 +33,7 @@ public class LucasServerImpl extends DataStoreImplBase {
             try{
                 userResponse = Files.readAllLines(Paths.get("LucasOutput.txt")).toString();
             }
-            catch(IOException e){
+            catch(IOException e) {
                 throw new RuntimeException(e);
             }
         }else {
