@@ -30,7 +30,7 @@ public class LucasServerImpl extends DataStoreImplBase {
         ComputeResult result = dataServer.compute(request2);
         String userResponse;
         if(result.getStatus()==ComputeResult.Status.SUCCESS){
-            try {
+            try{
                 userResponse = Files.readAllLines(Paths.get("LucasOutput.txt")).toString();
             }
             catch(IOException e){

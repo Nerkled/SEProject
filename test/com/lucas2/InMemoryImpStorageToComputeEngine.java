@@ -1,5 +1,9 @@
 package com.lucas2;
-import com.lucas.*;
+import com.lucas.InMemoryInputConfig;
+import com.lucas.InputConfig;
+import com.lucas.Result;
+import com.lucas.StorageToComputeEngineAPI;
+import com.lucas.OutputConfig;
 
 import java.util.List;
 public class InMemoryImpStorageToComputeEngine implements StorageToComputeEngineAPI {
