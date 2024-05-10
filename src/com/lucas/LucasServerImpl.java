@@ -38,9 +38,7 @@ public class LucasServerImpl extends DataStoreImplBase {
         }else {
             userResponse = "Error";
         }
-        UserToComputeProto.GetDataResponse response = UserToComputeProto.GetDataResponse.newBuilder()
-            .setResult(userResponse)
-                .build();
+        UserToComputeProto.GetDataResponse response = UserToComputeProto.GetDataResponse.newBuilder().setResult(userResponse).build();
         responseObserver.onNext(response);
         responseObserver.onCompleted();
     }
