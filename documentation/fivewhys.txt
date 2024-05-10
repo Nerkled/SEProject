@@ -1,0 +1,23 @@
+Problem: We are trying to get our computation engine on a website, but it's not working.
+
+1st Why: Why isn't it working?
+    - The transition of our computation engine into a website isn't working because our build.gradle file isn't detecting some necessary plugins
+
+2nd Why: Why?
+    - We did not catch, nor fix the problems in our code early on or try to understand them better and Gradle is new to all of us.
+
+3rd Why: Why weren't the problems caught in the code early on?
+    - We waited until the time of the deadline neared to come up with a solution for the code.
+
+4th why: Why did you wait until the last minute to catch on to the problems in the code?
+    - No plan was previously created to speed the process up and avoid problems with the amount of time there was remaining.
+
+5th why: Why was there no plan previously created to prevent time management issues within the group?
+    - Poor communication between group members.
+
+Process Change:
+
+    In order for these problems, especially within our communication, to be addressed, there needs to be more focus 
+    on fixing the previous assignments as soon as possible, while also coming up with a concise and detailed plan
+    within the group for the next assignment. This way, we can complete assignments in a sequential order without having 
+    to sacrifice previous work that could come back and potentially haunt our workflow in the future.
