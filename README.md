@@ -15,3 +15,5 @@
 ### The main fix that we thought to do was to approach the problem differently. We implemented dynamic programming to get a much faster time to compute the Lucas number of the given output.
 
 ### Here is a link to our benchmark test - https://github.com/Nerkled/SEProject/blob/main/test/com/lucas2/BenchmarkTest.java
+
+### Link to our Five Why's - https://github.com/Nerkled/SEProject/blob/main/documentation/fivewhys.txt
